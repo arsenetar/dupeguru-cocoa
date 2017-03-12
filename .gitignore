@@ -10,6 +10,5 @@ __pycache__
 /cocoa/autogen
 /locale
 
-/run.py
 /cocoa/*/Info.plist
 /cocoa/*/build

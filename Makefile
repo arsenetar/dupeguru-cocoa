@@ -34,4 +34,7 @@ env : | $(submodules_target) reqs
 build:
 	./env/bin/python build.py
 
-.PHONY : reqs build all
+run:
+	./env/bin/python run.py
+
+.PHONY : reqs build run all
