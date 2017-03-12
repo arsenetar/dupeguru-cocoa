@@ -104,12 +104,18 @@ def build_xibless(dest='cocoa/autogen'):
         )
 
 def build_cocoa(dev):
-    print("Creating OS X app structure")
-    app = cocoa_app()
     app_version = get_module_version('core')
     cocoa_project_path = 'cocoa'
     filereplace(op.join(cocoa_project_path, 'InfoTemplate.plist'), op.join('build', 'Info.plist'), version=app_version)
-    app.create(op.join('build', 'Info.plist'))
+    copy_embeddable_python_dylib('build')
+    if not op.exists('build/PythonHeaders'):
+        os.symlink(op.dirname(sysconfig.get_config_h_filename()), 'build/PythonHeaders')
+    build_help()
+    print("Compiling with Xcode")
+    print_and_do('xcodebuild')
+    if op.exists('build/dupeGuru.app'):
+        shutil.rmtree('build/dupeGuru.app')
+    shutil.copytree('build/Release/dupeGuru.app', 'build/dupeGuru.app')
     print("Building localizations")
     build_localizations()
     print("Building xibless UIs")
@@ -119,7 +125,7 @@ def build_cocoa(dev):
     build_cocoa_proxy_module()
     build_cocoa_bridging_interfaces()
     print("Building the cocoa layer")
-    copy_embeddable_python_dylib('build')
+    app = cocoa_app()
     pydep_folder = op.join(app.resources, 'py')
     if not op.exists(pydep_folder):
         os.mkdir(pydep_folder)
@@ -142,17 +148,6 @@ def build_cocoa(dev):
         compileall.compile_dir(pydep_folder, force=True, legacy=True)
         delete_files_with_pattern(pydep_folder, '*.py')
         delete_files_with_pattern(pydep_folder, '__pycache__')
-    if not op.exists('build/PythonHeaders'):
-        os.symlink(op.dirname(sysconfig.get_config_h_filename()), 'build/PythonHeaders')
-    print("Compiling with Xcode")
-    print_and_do('xcodebuild')
-    app.copy_executable('build/Release/dupeGuru.app/Contents/MacOS/dupeGuru')
-    build_help()
-    print("Copying resources and frameworks")
-    image_path = 'cocoa/dupeguru.icns'
-    resources = [image_path, 'build/dg_cocoa.py', 'build/help']
-    app.copy_resources(*resources, use_symlinks=dev)
-    app.copy_frameworks('build/Python')
 
 def build_help():
     print("Generating Help")

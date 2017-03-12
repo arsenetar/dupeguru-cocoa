@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -80,7 +80,24 @@
 		CE97215D1E74E41D00A598C9 /* PyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721381E74E41D00A598C9 /* PyTextField.m */; };
 		CE97215E1E74E41D00A598C9 /* ResultWindow_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97213A1E74E41D00A598C9 /* ResultWindow_UI.m */; };
 		CE97215F1E74E41D00A598C9 /* XiblessSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97213C1E74E41D00A598C9 /* XiblessSupport.m */; };
+		CEFC8A251E74F23000965F37 /* dg_cocoa.py in Resources */ = {isa = PBXBuildFile; fileRef = CEFC8A231E74F23000965F37 /* dg_cocoa.py */; };
+		CEFC8A261E74F23000965F37 /* dupeguru.icns in Resources */ = {isa = PBXBuildFile; fileRef = CEFC8A241E74F23000965F37 /* dupeguru.icns */; };
+		CEFC8A281E74F28100965F37 /* help in Resources */ = {isa = PBXBuildFile; fileRef = CEFC8A271E74F28100965F37 /* help */; };
+		CEFC8A2B1E74F45400965F37 /* Python in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE6F7D8C1E74E71C004C0518 /* Python */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEFC8A2A1E74F44200965F37 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEFC8A2B1E74F45400965F37 /* Python in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE6F7D891E74E5C2004C0518 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = build/Info.plist; sourceTree = "<group>"; };
@@ -232,6 +249,9 @@
 		CE97213B1E74E41D00A598C9 /* XiblessSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XiblessSupport.h; path = cocoa/autogen/XiblessSupport.h; sourceTree = "<group>"; };
 		CE97213C1E74E41D00A598C9 /* XiblessSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XiblessSupport.m; path = cocoa/autogen/XiblessSupport.m; sourceTree = "<group>"; };
 		CE9C2E9D1E74E1640099B9FB /* dupeGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dupeGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFC8A231E74F23000965F37 /* dg_cocoa.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = dg_cocoa.py; path = cocoa/dg_cocoa.py; sourceTree = "<group>"; };
+		CEFC8A241E74F23000965F37 /* dupeguru.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = dupeguru.icns; path = cocoa/dupeguru.icns; sourceTree = "<group>"; };
+		CEFC8A271E74F28100965F37 /* help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = help; path = build/help; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,6 +466,7 @@
 				CE6F7D8E1E74E919004C0518 /* cocoalib */,
 				CE9C2E9E1E74E1640099B9FB /* Products */,
 				CE6F7D8B1E74E71B004C0518 /* Frameworks */,
+				CEFC8A221E74F0F700965F37 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,6 +476,16 @@
 				CE9C2E9D1E74E1640099B9FB /* dupeGuru.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CEFC8A221E74F0F700965F37 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEFC8A271E74F28100965F37 /* help */,
+				CEFC8A231E74F23000965F37 /* dg_cocoa.py */,
+				CEFC8A241E74F23000965F37 /* dupeguru.icns */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +498,7 @@
 				CE9C2E991E74E1640099B9FB /* Sources */,
 				CE9C2E9A1E74E1640099B9FB /* Frameworks */,
 				CE9C2E9B1E74E1640099B9FB /* Resources */,
+				CEFC8A2A1E74F44200965F37 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -493,7 +525,7 @@
 				};
 			};
 			buildConfigurationList = CE9C2E981E74E1640099B9FB /* Build configuration list for PBXProject "dupeGuru" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -515,6 +547,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFC8A251E74F23000965F37 /* dg_cocoa.py in Resources */,
+				CEFC8A261E74F23000965F37 /* dupeguru.icns in Resources */,
+				CEFC8A281E74F28100965F37 /* help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +729,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = build/PythonHeaders;
 				INFOPLIST_FILE = "$(SRCROOT)/build/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -710,6 +746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = build/PythonHeaders;
 				INFOPLIST_FILE = "$(SRCROOT)/build/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
