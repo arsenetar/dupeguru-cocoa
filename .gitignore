@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__
+*.so
+*.mo
+*.waf*
+.lock-waf*
+/build
+/cocoa/build
+/env
+/cocoa/autogen
+/locale
+
+/run.py
+/cocoa/*/Info.plist
+/cocoa/*/build
