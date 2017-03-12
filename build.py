@@ -11,6 +11,7 @@ import os.path as op
 from optparse import OptionParser
 import shutil
 import compileall
+import sysconfig
 
 from setuptools import setup, Extension
 
@@ -141,15 +142,15 @@ def build_cocoa(dev):
         compileall.compile_dir(pydep_folder, force=True, legacy=True)
         delete_files_with_pattern(pydep_folder, '*.py')
         delete_files_with_pattern(pydep_folder, '__pycache__')
-    print("Compiling with WAF")
-    os.chdir('cocoa')
-    print_and_do('{0} waf configure && {0} waf'.format(sys.executable))
-    os.chdir('..')
-    app.copy_executable('cocoa/build/dupeGuru')
+    if not op.exists('build/PythonHeaders'):
+        os.symlink(op.dirname(sysconfig.get_config_h_filename()), 'build/PythonHeaders')
+    print("Compiling with Xcode")
+    print_and_do('xcodebuild')
+    app.copy_executable('build/Release/dupeGuru.app/Contents/MacOS/dupeGuru')
     build_help()
     print("Copying resources and frameworks")
     image_path = 'cocoa/dupeguru.icns'
-    resources = [image_path, 'cocoa/dsa_pub.pem', 'build/dg_cocoa.py', 'build/help']
+    resources = [image_path, 'build/dg_cocoa.py', 'build/help']
     app.copy_resources(*resources, use_symlinks=dev)
     app.copy_frameworks('build/Python')
 
