@@ -104,6 +104,13 @@ def build_xibless(dest='cocoa/autogen'):
         )
 
 def build_cocoa(dev):
+    
+    build_localizations()
+    build_cocoalib_xibless()
+    build_xibless()
+    build_cocoa_proxy_module()
+    build_cocoa_bridging_interfaces()
+
     app_version = get_module_version('core')
     cocoa_project_path = 'cocoa'
     filereplace(op.join(cocoa_project_path, 'InfoTemplate.plist'), op.join('build', 'Info.plist'), version=app_version)
@@ -111,20 +118,12 @@ def build_cocoa(dev):
     if not op.exists('build/PythonHeaders'):
         os.symlink(op.dirname(sysconfig.get_config_h_filename()), 'build/PythonHeaders')
     build_help()
-    print("Compiling with Xcode")
+
     print_and_do('xcodebuild')
     if op.exists('build/dupeGuru.app'):
         shutil.rmtree('build/dupeGuru.app')
     shutil.copytree('build/Release/dupeGuru.app', 'build/dupeGuru.app')
-    print("Building localizations")
-    build_localizations()
-    print("Building xibless UIs")
-    build_cocoalib_xibless()
-    build_xibless()
-    print("Building Python extensions")
-    build_cocoa_proxy_module()
-    build_cocoa_bridging_interfaces()
-    print("Building the cocoa layer")
+
     app = cocoa_app()
     pydep_folder = op.join(app.resources, 'py')
     if not op.exists(pydep_folder):

@@ -24,7 +24,6 @@ reqs :
 $(submodules_target) :
 	git submodule init
 	git submodule update
-	cd dupeguru; ln -sf ../hscommon .; ln -sf ../cocoalib .
 
 env : | $(submodules_target) reqs
 	@echo "Creating our virtualenv"
