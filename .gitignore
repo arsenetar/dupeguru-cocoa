@@ -10,9 +10,8 @@ __pycache__
 
 /cocoa/*/Info.plist
 /cocoa/*/build
-/cocoa/*.lproj
-!/cocoa/Base.lproj
-!/cocoa/en.lproj
+/cocoa/*.lproj/*.strings
+!/cocoa/Base.lproj/Localizable.strings
 
 # Xcode
 *.xcworkspace

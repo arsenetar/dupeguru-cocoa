@@ -10,7 +10,6 @@
 		CE0559871E762105008EB4F8 /* IgnoreListDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0559851E762105008EB4F8 /* IgnoreListDialog.xib */; };
 		CE05598E1E76217C008EB4F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE05598C1E76217C008EB4F8 /* Localizable.strings */; };
 		CE0559921E7626E7008EB4F8 /* locale in Resources */ = {isa = PBXBuildFile; fileRef = CE0559911E7626E7008EB4F8 /* locale */; };
-		CE0559951E762853008EB4F8 /* cocoalib.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0559931E762853008EB4F8 /* cocoalib.strings */; };
 		CE6F7D8D1E74E71C004C0518 /* Python in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6F7D8C1E74E71C004C0518 /* Python */; settings = {ATTRIBUTES = (Required, ); }; };
 		CE6F7DE61E74E9E4004C0518 /* Dialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F7DCF1E74E9E4004C0518 /* Dialogs.m */; };
 		CE6F7DE71E74E9E4004C0518 /* HSAboutBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F7DD11E74E9E4004C0518 /* HSAboutBox.m */; };
@@ -35,6 +34,8 @@
 		CE6F7E151E74EA26004C0518 /* HSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F7E0F1E74EA26004C0518 /* HSTableView.m */; };
 		CE6F7E161E74EA26004C0518 /* NSIndexPathAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F7E111E74EA26004C0518 /* NSIndexPathAdditions.m */; };
 		CE6F7E171E74EA26004C0518 /* NSTableViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6F7E131E74EA26004C0518 /* NSTableViewAdditions.m */; };
+		CE7CA6061E76337700874874 /* about.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7CA6021E76337700874874 /* about.xib */; };
+		CE7CA6071E76337700874874 /* cocoalib.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7CA6041E76337700874874 /* cocoalib.strings */; };
 		CE9720E81E74E40300A598C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720CD1E74E40300A598C9 /* AppDelegate.m */; };
 		CE9720E91E74E40300A598C9 /* DeletionOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720D01E74E40300A598C9 /* DeletionOptions.m */; };
 		CE9720EA1E74E40300A598C9 /* DetailsPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720D21E74E40300A598C9 /* DetailsPanel.m */; };
@@ -53,7 +54,6 @@
 		CE97213E1E74E41D00A598C9 /* DetailsPanel_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720FA1E74E41C00A598C9 /* DetailsPanel_UI.m */; };
 		CE97213F1E74E41D00A598C9 /* DetailsPanelPicture_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720FC1E74E41C00A598C9 /* DetailsPanelPicture_UI.m */; };
 		CE9721401E74E41D00A598C9 /* DirectoryPanel_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720FE1E74E41C00A598C9 /* DirectoryPanel_UI.m */; };
-		CE9721411E74E41D00A598C9 /* HSAboutBox_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721001E74E41C00A598C9 /* HSAboutBox_UI.m */; };
 		CE9721421E74E41D00A598C9 /* HSErrorReportWindow_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721021E74E41C00A598C9 /* HSErrorReportWindow_UI.m */; };
 		CE9721431E74E41D00A598C9 /* IgnoreListDialog_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721041E74E41C00A598C9 /* IgnoreListDialog_UI.m */; };
 		CE9721441E74E41D00A598C9 /* MainMenu_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721061E74E41C00A598C9 /* MainMenu_UI.m */; };
@@ -105,56 +105,37 @@
 
 /* Begin PBXFileReference section */
 		CE0559861E762105008EB4F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = cocoa/Base.lproj/IgnoreListDialog.xib; sourceTree = "<group>"; };
-		CE0559891E762134008EB4F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = cocoa/en.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
 		CE05598B1E762137008EB4F8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = cocoa/fr.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
 		CE05598D1E76217C008EB4F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = cocoa/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CE05598F1E762182008EB4F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = cocoa/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559901E762183008EB4F8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = cocoa/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559911E7626E7008EB4F8 /* locale */ = {isa = PBXFileReference; lastKnownFileType = folder; name = locale; path = build/locale; sourceTree = "<group>"; };
-		CE0559941E762853008EB4F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = cocoa/Base.lproj/cocoalib.strings; sourceTree = "<group>"; };
-		CE0559961E762859008EB4F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = cocoa/en.lproj/cocoalib.strings; sourceTree = "<group>"; };
-		CE0559971E76285C008EB4F8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = cocoa/fr.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559991E7628AD008EB4F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = cocoa/de.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE05599A1E7628AD008EB4F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = cocoa/de.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE05599B1E7628AD008EB4F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = cocoa/de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE05599C1E7628E7008EB4F8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cocoa/cs.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE05599D1E7628E7008EB4F8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cocoa/cs.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE05599E1E7628E7008EB4F8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cocoa/cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE05599F1E7628F8008EB4F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = cocoa/es.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559A01E7628F8008EB4F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = cocoa/es.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559A11E7628F8008EB4F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = cocoa/es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559AB1E762953008EB4F8 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = cocoa/el.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559AC1E762954008EB4F8 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = cocoa/el.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559AD1E762954008EB4F8 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = cocoa/el.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559B11E7629DE008EB4F8 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = cocoa/it.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559B21E7629DE008EB4F8 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = cocoa/it.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559B31E7629DE008EB4F8 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = cocoa/it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559B41E7629E9008EB4F8 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = cocoa/nl.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559B51E7629E9008EB4F8 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = cocoa/nl.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559B61E7629EA008EB4F8 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = cocoa/nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559B81E762A15008EB4F8 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = cocoa/pl.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559B91E762A15008EB4F8 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = cocoa/pl.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559BA1E762A16008EB4F8 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = cocoa/pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559BB1E762A2B008EB4F8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = cocoa/ko.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559BC1E762A2B008EB4F8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = cocoa/ko.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559BD1E762A2B008EB4F8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = cocoa/ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559BE1E762A4A008EB4F8 /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = cocoa/hy.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559BF1E762A4A008EB4F8 /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = cocoa/hy.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559C01E762A4A008EB4F8 /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = cocoa/hy.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559C11E762A62008EB4F8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "cocoa/pt-BR.lproj/IgnoreListDialog.strings"; sourceTree = "<group>"; };
-		CE0559C21E762A62008EB4F8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "cocoa/pt-BR.lproj/cocoalib.strings"; sourceTree = "<group>"; };
 		CE0559C31E762A62008EB4F8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "cocoa/pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CE0559C41E762A6D008EB4F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = cocoa/ru.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559C51E762A6D008EB4F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = cocoa/ru.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559C61E762A6D008EB4F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = cocoa/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559C71E762A75008EB4F8 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = cocoa/uk.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559C81E762A75008EB4F8 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = cocoa/uk.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559C91E762A75008EB4F8 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = cocoa/uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0559CB1E762A94008EB4F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "cocoa/zh-Hans.lproj/IgnoreListDialog.strings"; sourceTree = "<group>"; };
-		CE0559CC1E762A94008EB4F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "cocoa/zh-Hans.lproj/cocoalib.strings"; sourceTree = "<group>"; };
 		CE0559CD1E762A94008EB4F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "cocoa/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CE0559CE1E762A9A008EB4F8 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = cocoa/vi.lproj/IgnoreListDialog.strings; sourceTree = "<group>"; };
-		CE0559CF1E762A9A008EB4F8 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = cocoa/vi.lproj/cocoalib.strings; sourceTree = "<group>"; };
 		CE0559D01E762A9A008EB4F8 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = cocoa/vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE6F7D891E74E5C2004C0518 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = build/Info.plist; sourceTree = "<group>"; };
 		CE6F7D8C1E74E71C004C0518 /* Python */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Python; path = build/Python; sourceTree = "<group>"; };
@@ -206,6 +187,38 @@
 		CE6F7E121E74EA26004C0518 /* NSTableViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSTableViewAdditions.h; path = cocoalib/views/NSTableViewAdditions.h; sourceTree = "<group>"; };
 		CE6F7E131E74EA26004C0518 /* NSTableViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSTableViewAdditions.m; path = cocoalib/views/NSTableViewAdditions.m; sourceTree = "<group>"; };
 		CE6F7E181E74EA38004C0518 /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Worker.h; path = cocoalib/Worker.h; sourceTree = "<group>"; };
+		CE7CA6031E76337700874874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = cocoalib/Base.lproj/about.xib; sourceTree = "<group>"; };
+		CE7CA6051E76337700874874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = cocoalib/Base.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA6091E76337F00874874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = cocoalib/fr.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA60A1E76338000874874 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = cocoalib/de.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA60B1E76338100874874 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cocoalib/cs.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA60C1E76338200874874 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = cocoalib/es.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA60D1E76338300874874 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = cocoalib/el.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA60E1E76338400874874 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = cocoalib/it.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA60F1E76338500874874 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = cocoalib/nl.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA6101E76338600874874 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = cocoalib/pl.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA6111E76338700874874 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = cocoalib/ko.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA6121E76338800874874 /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = cocoalib/hy.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA6131E76338900874874 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "cocoalib/pt-BR.lproj/cocoalib.strings"; sourceTree = "<group>"; };
+		CE7CA6141E76338A00874874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = cocoalib/ru.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA6151E76338B00874874 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = cocoalib/uk.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA6161E76338B00874874 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "cocoalib/zh-Hans.lproj/cocoalib.strings"; sourceTree = "<group>"; };
+		CE7CA6171E76338C00874874 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = cocoalib/vi.lproj/cocoalib.strings; sourceTree = "<group>"; };
+		CE7CA61B1E7633BC00874874 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = cocoalib/fr.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA61D1E7633BE00874874 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = cocoalib/de.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA61F1E7633BF00874874 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cocoalib/cs.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA6211E7633C100874874 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = cocoalib/es.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA6231E7633C200874874 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = cocoalib/el.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA6251E7633C300874874 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = cocoalib/it.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA6271E7633C500874874 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = cocoalib/nl.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA6291E7633C600874874 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = cocoalib/pl.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA62B1E7633C800874874 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = cocoalib/ko.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA62D1E7633C900874874 /* hy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hy; path = cocoalib/hy.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA62F1E7633CB00874874 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "cocoalib/pt-BR.lproj/about.strings"; sourceTree = "<group>"; };
+		CE7CA6311E7633CC00874874 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = cocoalib/ru.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA6331E7633CD00874874 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = cocoalib/uk.lproj/about.strings; sourceTree = "<group>"; };
+		CE7CA6351E7633CF00874874 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "cocoalib/zh-Hans.lproj/about.strings"; sourceTree = "<group>"; };
+		CE7CA6371E7633D100874874 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = cocoalib/vi.lproj/about.strings; sourceTree = "<group>"; };
 		CE9720CC1E74E40300A598C9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cocoa/AppDelegate.h; sourceTree = "<group>"; };
 		CE9720CD1E74E40300A598C9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = cocoa/AppDelegate.m; sourceTree = "<group>"; };
 		CE9720CE1E74E40300A598C9 /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Consts.h; path = cocoa/Consts.h; sourceTree = "<group>"; };
@@ -242,8 +255,6 @@
 		CE9720FC1E74E41C00A598C9 /* DetailsPanelPicture_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailsPanelPicture_UI.m; path = cocoa/autogen/DetailsPanelPicture_UI.m; sourceTree = "<group>"; };
 		CE9720FD1E74E41C00A598C9 /* DirectoryPanel_UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectoryPanel_UI.h; path = cocoa/autogen/DirectoryPanel_UI.h; sourceTree = "<group>"; };
 		CE9720FE1E74E41C00A598C9 /* DirectoryPanel_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectoryPanel_UI.m; path = cocoa/autogen/DirectoryPanel_UI.m; sourceTree = "<group>"; };
-		CE9720FF1E74E41C00A598C9 /* HSAboutBox_UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSAboutBox_UI.h; path = cocoa/autogen/HSAboutBox_UI.h; sourceTree = "<group>"; };
-		CE9721001E74E41C00A598C9 /* HSAboutBox_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSAboutBox_UI.m; path = cocoa/autogen/HSAboutBox_UI.m; sourceTree = "<group>"; };
 		CE9721011E74E41C00A598C9 /* HSErrorReportWindow_UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSErrorReportWindow_UI.h; path = cocoa/autogen/HSErrorReportWindow_UI.h; sourceTree = "<group>"; };
 		CE9721021E74E41C00A598C9 /* HSErrorReportWindow_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSErrorReportWindow_UI.m; path = cocoa/autogen/HSErrorReportWindow_UI.m; sourceTree = "<group>"; };
 		CE9721031E74E41C00A598C9 /* IgnoreListDialog_UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IgnoreListDialog_UI.h; path = cocoa/autogen/IgnoreListDialog_UI.h; sourceTree = "<group>"; };
@@ -409,6 +420,15 @@
 			name = views;
 			sourceTree = "<group>";
 		};
+		CE7CA6011E76336000874874 /* cocoalib */ = {
+			isa = PBXGroup;
+			children = (
+				CE7CA6021E76337700874874 /* about.xib */,
+				CE7CA6041E76337700874874 /* cocoalib.strings */,
+			);
+			name = cocoalib;
+			sourceTree = "<group>";
+		};
 		CE9720CB1E74E3DE00A598C9 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,8 +476,6 @@
 				CE9720FC1E74E41C00A598C9 /* DetailsPanelPicture_UI.m */,
 				CE9720FD1E74E41C00A598C9 /* DirectoryPanel_UI.h */,
 				CE9720FE1E74E41C00A598C9 /* DirectoryPanel_UI.m */,
-				CE9720FF1E74E41C00A598C9 /* HSAboutBox_UI.h */,
-				CE9721001E74E41C00A598C9 /* HSAboutBox_UI.m */,
 				CE9721011E74E41C00A598C9 /* HSErrorReportWindow_UI.h */,
 				CE9721021E74E41C00A598C9 /* HSErrorReportWindow_UI.m */,
 				CE9721031E74E41C00A598C9 /* IgnoreListDialog_UI.h */,
@@ -545,9 +563,9 @@
 		CEFC8A221E74F0F700965F37 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CE0559931E762853008EB4F8 /* cocoalib.strings */,
 				CE05598C1E76217C008EB4F8 /* Localizable.strings */,
 				CE1891011E75D5A6008CE1AE /* xib */,
+				CE7CA6011E76336000874874 /* cocoalib */,
 				CEFC8A271E74F28100965F37 /* help */,
 				CE0559911E7626E7008EB4F8 /* locale */,
 				CEFC8A231E74F23000965F37 /* dg_cocoa.py */,
@@ -597,7 +615,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				fr,
 				de,
@@ -631,9 +648,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0559921E7626E7008EB4F8 /* locale in Resources */,
-				CE0559951E762853008EB4F8 /* cocoalib.strings in Resources */,
 				CE05598E1E76217C008EB4F8 /* Localizable.strings in Resources */,
 				CEFC8A251E74F23000965F37 /* dg_cocoa.py in Resources */,
+				CE7CA6061E76337700874874 /* about.xib in Resources */,
+				CE7CA6071E76337700874874 /* cocoalib.strings in Resources */,
 				CE0559871E762105008EB4F8 /* IgnoreListDialog.xib in Resources */,
 				CEFC8A261E74F23000965F37 /* dupeguru.icns in Resources */,
 				CEFC8A281E74F28100965F37 /* help in Resources */,
@@ -673,7 +691,6 @@
 				CE6F7E151E74EA26004C0518 /* HSTableView.m in Sources */,
 				CE9720F41E74E40300A598C9 /* ResultWindow.m in Sources */,
 				CE9721531E74E41D00A598C9 /* PyIgnoreListDialog.m in Sources */,
-				CE9721411E74E41D00A598C9 /* HSAboutBox_UI.m in Sources */,
 				CE6F7E0A1E74EA12004C0518 /* HSTable.m in Sources */,
 				CE6F7DEB1E74E9E4004C0518 /* HSRecentFiles.m in Sources */,
 				CE9720F51E74E40300A598C9 /* StatsLabel.m in Sources */,
@@ -729,7 +746,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE0559861E762105008EB4F8 /* Base */,
-				CE0559891E762134008EB4F8 /* en */,
 				CE05598B1E762137008EB4F8 /* fr */,
 				CE0559991E7628AD008EB4F8 /* de */,
 				CE05599C1E7628E7008EB4F8 /* cs */,
@@ -753,7 +769,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE05598D1E76217C008EB4F8 /* Base */,
-				CE05598F1E762182008EB4F8 /* en */,
 				CE0559901E762183008EB4F8 /* fr */,
 				CE05599B1E7628AD008EB4F8 /* de */,
 				CE05599E1E7628E7008EB4F8 /* cs */,
@@ -773,26 +788,48 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		CE0559931E762853008EB4F8 /* cocoalib.strings */ = {
+		CE7CA6021E76337700874874 /* about.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CE0559941E762853008EB4F8 /* Base */,
-				CE0559961E762859008EB4F8 /* en */,
-				CE0559971E76285C008EB4F8 /* fr */,
-				CE05599A1E7628AD008EB4F8 /* de */,
-				CE05599D1E7628E7008EB4F8 /* cs */,
-				CE0559A01E7628F8008EB4F8 /* es */,
-				CE0559AC1E762954008EB4F8 /* el */,
-				CE0559B21E7629DE008EB4F8 /* it */,
-				CE0559B51E7629E9008EB4F8 /* nl */,
-				CE0559B91E762A15008EB4F8 /* pl */,
-				CE0559BC1E762A2B008EB4F8 /* ko */,
-				CE0559BF1E762A4A008EB4F8 /* hy */,
-				CE0559C21E762A62008EB4F8 /* pt-BR */,
-				CE0559C51E762A6D008EB4F8 /* ru */,
-				CE0559C81E762A75008EB4F8 /* uk */,
-				CE0559CC1E762A94008EB4F8 /* zh-Hans */,
-				CE0559CF1E762A9A008EB4F8 /* vi */,
+				CE7CA6031E76337700874874 /* Base */,
+				CE7CA61B1E7633BC00874874 /* fr */,
+				CE7CA61D1E7633BE00874874 /* de */,
+				CE7CA61F1E7633BF00874874 /* cs */,
+				CE7CA6211E7633C100874874 /* es */,
+				CE7CA6231E7633C200874874 /* el */,
+				CE7CA6251E7633C300874874 /* it */,
+				CE7CA6271E7633C500874874 /* nl */,
+				CE7CA6291E7633C600874874 /* pl */,
+				CE7CA62B1E7633C800874874 /* ko */,
+				CE7CA62D1E7633C900874874 /* hy */,
+				CE7CA62F1E7633CB00874874 /* pt-BR */,
+				CE7CA6311E7633CC00874874 /* ru */,
+				CE7CA6331E7633CD00874874 /* uk */,
+				CE7CA6351E7633CF00874874 /* zh-Hans */,
+				CE7CA6371E7633D100874874 /* vi */,
+			);
+			name = about.xib;
+			sourceTree = "<group>";
+		};
+		CE7CA6041E76337700874874 /* cocoalib.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7CA6051E76337700874874 /* Base */,
+				CE7CA6091E76337F00874874 /* fr */,
+				CE7CA60A1E76338000874874 /* de */,
+				CE7CA60B1E76338100874874 /* cs */,
+				CE7CA60C1E76338200874874 /* es */,
+				CE7CA60D1E76338300874874 /* el */,
+				CE7CA60E1E76338400874874 /* it */,
+				CE7CA60F1E76338500874874 /* nl */,
+				CE7CA6101E76338600874874 /* pl */,
+				CE7CA6111E76338700874874 /* ko */,
+				CE7CA6121E76338800874874 /* hy */,
+				CE7CA6131E76338900874874 /* pt-BR */,
+				CE7CA6141E76338A00874874 /* ru */,
+				CE7CA6151E76338B00874874 /* uk */,
+				CE7CA6161E76338B00874874 /* zh-Hans */,
+				CE7CA6171E76338C00874874 /* vi */,
 			);
 			name = cocoalib.strings;
 			sourceTree = "<group>";

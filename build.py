@@ -163,8 +163,10 @@ def build_localizations():
     if not op.exists('locale'):
         os.symlink('dupeguru/locale', 'locale')
     loc.compile_all_po('locale')
+    loc.generate_cocoa_strings_from_xib(op.join('cocoa', 'Base.lproj'))
     loc.localize_all_stringsfiles(op.join('cocoa', 'Base.lproj'), 'cocoa')
-    loc.localize_all_stringsfiles(op.join('cocoa', 'en.lproj'), 'cocoa')
+    loc.generate_cocoa_strings_from_xib(op.join('cocoalib', 'Base.lproj'))
+    loc.localize_all_stringsfiles(op.join('cocoalib', 'Base.lproj'), 'cocoalib')
     locale_dest = op.join('build', 'locale')
     if op.exists(locale_dest):
         shutil.rmtree(locale_dest)
