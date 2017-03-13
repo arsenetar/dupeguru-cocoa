@@ -80,7 +80,6 @@ def build_xibless(dest='cocoa/autogen'):
     import xibless
     ensure_folder(dest)
     FNPAIRS = [
-        ('ignore_list_dialog.py', 'IgnoreListDialog_UI'),
         ('deletion_options.py', 'DeletionOptions_UI'),
         ('problem_dialog.py', 'ProblemDialog_UI'),
         ('directory_panel.py', 'DirectoryPanel_UI'),
@@ -164,9 +163,9 @@ def build_localizations():
     if not op.exists('locale'):
         os.symlink('dupeguru/locale', 'locale')
     loc.compile_all_po('locale')
-    app = cocoa_app()
-    loc.build_cocoa_localizations(app, en_stringsfile=op.join('cocoa', 'en.lproj', 'Localizable.strings'))
-    locale_dest = op.join(app.resources, 'locale')
+    loc.localize_all_stringsfiles(op.join('cocoa', 'Base.lproj'), 'cocoa')
+    loc.localize_all_stringsfiles(op.join('cocoa', 'en.lproj'), 'cocoa')
+    locale_dest = op.join('build', 'locale')
     if op.exists(locale_dest):
         shutil.rmtree(locale_dest)
     shutil.copytree('locale', locale_dest, ignore=shutil.ignore_patterns('*.po', '*.pot'))

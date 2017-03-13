@@ -2,8 +2,6 @@
 __pycache__
 *.so
 *.mo
-*.waf*
-.lock-waf*
 /build
 /cocoa/build
 /env
@@ -12,3 +10,11 @@ __pycache__
 
 /cocoa/*/Info.plist
 /cocoa/*/build
+/cocoa/*.lproj
+!/cocoa/Base.lproj
+!/cocoa/en.lproj
+
+# Xcode
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
