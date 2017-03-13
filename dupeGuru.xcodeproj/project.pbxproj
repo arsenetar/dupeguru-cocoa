@@ -84,6 +84,7 @@
 		CE97215D1E74E41D00A598C9 /* PyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721381E74E41D00A598C9 /* PyTextField.m */; };
 		CE97215E1E74E41D00A598C9 /* ResultWindow_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97213A1E74E41D00A598C9 /* ResultWindow_UI.m */; };
 		CE97215F1E74E41D00A598C9 /* XiblessSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97213C1E74E41D00A598C9 /* XiblessSupport.m */; };
+		CED88C1F1E763F2700C9B98C /* py in Resources */ = {isa = PBXBuildFile; fileRef = CED88C1E1E763F2700C9B98C /* py */; };
 		CEFC8A251E74F23000965F37 /* dg_cocoa.py in Resources */ = {isa = PBXBuildFile; fileRef = CEFC8A231E74F23000965F37 /* dg_cocoa.py */; };
 		CEFC8A261E74F23000965F37 /* dupeguru.icns in Resources */ = {isa = PBXBuildFile; fileRef = CEFC8A241E74F23000965F37 /* dupeguru.icns */; };
 		CEFC8A281E74F28100965F37 /* help in Resources */ = {isa = PBXBuildFile; fileRef = CEFC8A271E74F28100965F37 /* help */; };
@@ -316,6 +317,7 @@
 		CE97213B1E74E41D00A598C9 /* XiblessSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XiblessSupport.h; path = cocoa/autogen/XiblessSupport.h; sourceTree = "<group>"; };
 		CE97213C1E74E41D00A598C9 /* XiblessSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XiblessSupport.m; path = cocoa/autogen/XiblessSupport.m; sourceTree = "<group>"; };
 		CE9C2E9D1E74E1640099B9FB /* dupeGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dupeGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED88C1E1E763F2700C9B98C /* py */ = {isa = PBXFileReference; lastKnownFileType = folder; name = py; path = build/py; sourceTree = "<group>"; };
 		CEFC8A231E74F23000965F37 /* dg_cocoa.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = dg_cocoa.py; path = cocoa/dg_cocoa.py; sourceTree = "<group>"; };
 		CEFC8A241E74F23000965F37 /* dupeguru.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = dupeguru.icns; path = cocoa/dupeguru.icns; sourceTree = "<group>"; };
 		CEFC8A271E74F28100965F37 /* help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = help; path = build/help; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 				CE7CA6011E76336000874874 /* cocoalib */,
 				CEFC8A271E74F28100965F37 /* help */,
 				CE0559911E7626E7008EB4F8 /* locale */,
+				CED88C1E1E763F2700C9B98C /* py */,
 				CEFC8A231E74F23000965F37 /* dg_cocoa.py */,
 				CEFC8A241E74F23000965F37 /* dupeguru.icns */,
 			);
@@ -648,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0559921E7626E7008EB4F8 /* locale in Resources */,
+				CED88C1F1E763F2700C9B98C /* py in Resources */,
 				CE05598E1E76217C008EB4F8 /* Localizable.strings in Resources */,
 				CEFC8A251E74F23000965F37 /* dg_cocoa.py in Resources */,
 				CE7CA6061E76337700874874 /* about.xib in Resources */,

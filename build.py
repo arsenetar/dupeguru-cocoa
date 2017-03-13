@@ -118,13 +118,7 @@ def build_cocoa(dev):
         os.symlink(op.dirname(sysconfig.get_config_h_filename()), 'build/PythonHeaders')
     build_help()
 
-    print_and_do('xcodebuild')
-    if op.exists('build/dupeGuru.app'):
-        shutil.rmtree('build/dupeGuru.app')
-    shutil.copytree('build/Release/dupeGuru.app', 'build/dupeGuru.app')
-
-    app = cocoa_app()
-    pydep_folder = op.join(app.resources, 'py')
+    pydep_folder = op.join('build', 'py')
     if not op.exists(pydep_folder):
         os.mkdir(pydep_folder)
     shutil.copy(op.join(cocoa_project_path, 'dg_cocoa.py'), 'build')
@@ -146,6 +140,8 @@ def build_cocoa(dev):
         compileall.compile_dir(pydep_folder, force=True, legacy=True)
         delete_files_with_pattern(pydep_folder, '*.py')
         delete_files_with_pattern(pydep_folder, '__pycache__')
+
+    print_and_do('xcodebuild')
 
 def build_help():
     print("Generating Help")
