@@ -19,7 +19,7 @@ from hscommon import sphinxgen
 from hscommon.build import (
     add_to_pythonpath, print_and_do, copy_packages, filereplace,
     get_module_version, move_all, copy_all, OSXAppStructure,
-    build_cocoalib_xibless, fix_qt_resource_file, build_cocoa_ext, copy_embeddable_python_dylib,
+    fix_qt_resource_file, build_cocoa_ext, copy_embeddable_python_dylib,
     collect_stdlib_dependencies
 )
 from hscommon import loc
@@ -105,7 +105,6 @@ def build_xibless(dest='cocoa/autogen'):
 def build_cocoa(dev):
     
     build_localizations()
-    build_cocoalib_xibless()
     build_xibless()
     build_cocoa_proxy_module()
     build_cocoa_bridging_interfaces()
@@ -170,7 +169,6 @@ def build_localizations():
 
 def build_updatepot():
     print("Updating Cocoa strings file.")
-    build_cocoalib_xibless('cocoalib/autogen')
     loc.generate_cocoa_strings_from_code('cocoalib', 'cocoalib/en.lproj')
     build_xibless()
     loc.generate_cocoa_strings_from_code('cocoa', 'cocoa/en.lproj')
@@ -298,7 +296,6 @@ def main():
         os.chdir('..')
         cocoa_app().copy_executable('cocoa/build/dupeGuru')
     elif options.xibless:
-        build_cocoalib_xibless()
         build_xibless()
     else:
         build_normal(options.dev)
