@@ -188,7 +188,7 @@ def build_cocoa_proxy_module():
         "CocoaProxy", 'cocoalib/cocoa',
         [
             'cocoalib/cocoa/CocoaProxy.m', 'build/CocoaProxy.m', 'build/ObjP.m',
-            'cocoalib/HSErrorReportWindow.m', 'cocoa/autogen/HSErrorReportWindow_UI.m'
+            'cocoalib/HSErrorReportWindow.m'
         ],
         ['AppKit', 'CoreServices'],
         ['cocoalib', 'cocoa/autogen']

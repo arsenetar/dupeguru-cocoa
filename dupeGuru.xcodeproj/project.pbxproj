@@ -56,7 +56,6 @@
 		CE97213E1E74E41D00A598C9 /* DetailsPanel_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720FA1E74E41C00A598C9 /* DetailsPanel_UI.m */; };
 		CE97213F1E74E41D00A598C9 /* DetailsPanelPicture_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720FC1E74E41C00A598C9 /* DetailsPanelPicture_UI.m */; };
 		CE9721401E74E41D00A598C9 /* DirectoryPanel_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9720FE1E74E41C00A598C9 /* DirectoryPanel_UI.m */; };
-		CE9721431E74E41D00A598C9 /* IgnoreListDialog_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721041E74E41C00A598C9 /* IgnoreListDialog_UI.m */; };
 		CE9721441E74E41D00A598C9 /* MainMenu_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721061E74E41C00A598C9 /* MainMenu_UI.m */; };
 		CE9721451E74E41D00A598C9 /* ObjP.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721081E74E41C00A598C9 /* ObjP.m */; };
 		CE9721461E74E41D00A598C9 /* PreferencesPanelMusic_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97210A1E74E41C00A598C9 /* PreferencesPanelMusic_UI.m */; };
@@ -288,8 +287,6 @@
 		CE9720FC1E74E41C00A598C9 /* DetailsPanelPicture_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailsPanelPicture_UI.m; path = cocoa/autogen/DetailsPanelPicture_UI.m; sourceTree = "<group>"; };
 		CE9720FD1E74E41C00A598C9 /* DirectoryPanel_UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectoryPanel_UI.h; path = cocoa/autogen/DirectoryPanel_UI.h; sourceTree = "<group>"; };
 		CE9720FE1E74E41C00A598C9 /* DirectoryPanel_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectoryPanel_UI.m; path = cocoa/autogen/DirectoryPanel_UI.m; sourceTree = "<group>"; };
-		CE9721031E74E41C00A598C9 /* IgnoreListDialog_UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IgnoreListDialog_UI.h; path = cocoa/autogen/IgnoreListDialog_UI.h; sourceTree = "<group>"; };
-		CE9721041E74E41C00A598C9 /* IgnoreListDialog_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IgnoreListDialog_UI.m; path = cocoa/autogen/IgnoreListDialog_UI.m; sourceTree = "<group>"; };
 		CE9721051E74E41C00A598C9 /* MainMenu_UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenu_UI.h; path = cocoa/autogen/MainMenu_UI.h; sourceTree = "<group>"; };
 		CE9721061E74E41C00A598C9 /* MainMenu_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenu_UI.m; path = cocoa/autogen/MainMenu_UI.m; sourceTree = "<group>"; };
 		CE9721071E74E41C00A598C9 /* ObjP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjP.h; path = cocoa/autogen/ObjP.h; sourceTree = "<group>"; };
@@ -508,8 +505,6 @@
 				CE9720FC1E74E41C00A598C9 /* DetailsPanelPicture_UI.m */,
 				CE9720FD1E74E41C00A598C9 /* DirectoryPanel_UI.h */,
 				CE9720FE1E74E41C00A598C9 /* DirectoryPanel_UI.m */,
-				CE9721031E74E41C00A598C9 /* IgnoreListDialog_UI.h */,
-				CE9721041E74E41C00A598C9 /* IgnoreListDialog_UI.m */,
 				CE9721051E74E41C00A598C9 /* MainMenu_UI.h */,
 				CE9721061E74E41C00A598C9 /* MainMenu_UI.m */,
 				CE9721071E74E41C00A598C9 /* ObjP.h */,
@@ -704,7 +699,6 @@
 				CE6F7DF01E74E9E4004C0518 /* Utils.m in Sources */,
 				CE6F7E081E74EA12004C0518 /* HSProgressWindow.m in Sources */,
 				CE97215F1E74E41D00A598C9 /* XiblessSupport.m in Sources */,
-				CE9721431E74E41D00A598C9 /* IgnoreListDialog_UI.m in Sources */,
 				CE9721511E74E41D00A598C9 /* PyDupeGuru.m in Sources */,
 				CE9721441E74E41D00A598C9 /* MainMenu_UI.m in Sources */,
 				CE9721401E74E41D00A598C9 /* DirectoryPanel_UI.m in Sources */,
