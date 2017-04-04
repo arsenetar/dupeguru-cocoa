@@ -1,5 +1,5 @@
 /* 
-Copyright 2015 Hardcoded Software (http://www.hardcoded.net)
+Copyright 2017 Virgil Dupras
 
 This software is licensed under the "GPLv3" License as described in the "LICENSE" file, 
 which should be included with this package. The terms are also available at 
@@ -7,7 +7,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 #import "ResultWindow.h"
-#import "ResultWindow_UI.h"
 #import "Dialogs.h"
 #import "ProgressController.h"
 #import "Utils.h"
@@ -25,11 +24,10 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 - (id)initWithParentApp:(AppDelegate *)aApp;
 {
-    self = [super initWithWindow:nil];
+    self = [super initWithWindowNibName:@"ResultWindow"];
+    [self window];
     app = aApp;
     model = [app model];
-    [self setWindow:createResultWindow_UI(self)];
-    [[self window] setTitle:fmt(NSLocalizedString(@"%@ Results", @""), [model appName])];
     /* Put a cute iTunes-like bottom bar */
     [[self window] setContentBorderThickness:28 forEdge:NSMinYEdge];
     table = [[ResultTable alloc] initWithPyRef:[model resultTable] view:matches];
@@ -183,21 +181,21 @@ http://www.gnu.org/licenses/gpl-3.0.html
 }
 
 /* Actions */
-- (void)changeOptions
+- (IBAction)changeOptions:(id)sender
 {
     NSInteger seg = [optionsSwitch selectedSegment];
     if (seg == 0) {
-        [self toggleDetailsPanel];
+        [self toggleDetailsPanel:sender];
     }
     else if (seg == 1) {
-        [self togglePowerMarker];
+        [self togglePowerMarker:sender];
     }
     else if (seg == 2) {
-        [self toggleDelta];
+        [self toggleDelta:sender];
     }
 }
 
-- (void)copyMarked
+- (IBAction)copyMarked:(id)sender
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [model setRemoveEmptyFolders:n2b([ud objectForKey:@"removeEmptyFolders"])];
@@ -205,56 +203,56 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [model copyMarked];
 }
 
-- (void)trashMarked
+- (IBAction)trashMarked:(id)sender
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [model setRemoveEmptyFolders:n2b([ud objectForKey:@"removeEmptyFolders"])];
     [model deleteMarked];
 }
 
-- (void)filter
+- (IBAction)filter:(id)sender
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [model setEscapeFilterRegexp:!n2b([ud objectForKey:@"useRegexpFilter"])];
     [model applyFilter:[filterField stringValue]];
 }
 
-- (void)focusOnFilterField
+- (IBAction)focusOnFilterField:(id)sender
 {
     [[self window] makeFirstResponder:filterField];
 }
 
-- (void)ignoreSelected
+- (IBAction)ignoreSelected:(id)sender
 {
     [model addSelectedToIgnoreList];
 }
 
-- (void)invokeCustomCommand
+- (IBAction)invokeCustomCommand:(id)sender
 {
     [model invokeCustomCommand];
 }
 
-- (void)markAll
+- (IBAction)markAll:(id)sender
 {
     [model markAll];
 }
 
-- (void)markInvert
+- (IBAction)markInvert:(id)sender
 {
     [model markInvert];
 }
 
-- (void)markNone
+- (IBAction)markNone:(id)sender
 {
     [model markNone];
 }
 
-- (void)markSelected
+- (IBAction)markSelected:(id)sender
 {
     [model toggleSelectedMark];
 }
 
-- (void)moveMarked
+- (IBAction)moveMarked:(id)sender
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [model setRemoveEmptyFolders:n2b([ud objectForKey:@"removeEmptyFolders"])];
@@ -262,7 +260,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [model moveMarked];
 }
 
-- (void)openClicked
+- (IBAction)openClicked:(id)sender
 {
     if ([matches clickedRow] < 0) {
         return;
@@ -271,29 +269,29 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [model openSelected];
 }
 
-- (void)openSelected
+- (IBAction)openSelected:(id)sender
 {
     [model openSelected];
 }
 
-- (void)removeMarked
+- (IBAction)removeMarked:(id)sender
 {
     [model removeMarked];
 }
 
-- (void)removeSelected
+- (IBAction)removeSelected:(id)sender
 {
     [model removeSelected];
 }
 
-- (void)renameSelected
+- (IBAction)renameSelected:(id)sender
 {
     NSInteger col = [matches columnWithIdentifier:@"name"];
     NSInteger row = [matches selectedRow];
     [matches editColumn:col row:row withEvent:[NSApp currentEvent] select:YES];
 }
 
-- (void)reprioritizeResults
+- (IBAction)reprioritizeResults:(id)sender
 {
     PrioritizeDialog *dlg = [[PrioritizeDialog alloc] initWithApp:model];
     NSInteger result = [NSApp runModalForWindow:[dlg window]];
@@ -304,18 +302,18 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [[self window] makeKeyAndOrderFront:nil];
 }
 
-- (void)resetColumnsToDefault
+- (IBAction)resetColumnsToDefault:(id)sender
 {
     [[[table columns] model] resetToDefaults];
     [self fillColumnsMenu];
 }
 
-- (void)revealSelected
+- (IBAction)revealSelected:(id)sender
 {
     [model revealSelected];
 }
 
-- (void)saveResults
+- (IBAction)saveResults:(id)sender
 {
     NSSavePanel *sp = [NSSavePanel savePanel];
     [sp setCanCreateDirectories:YES];
@@ -327,37 +325,37 @@ http://www.gnu.org/licenses/gpl-3.0.html
     }
 }
 
-- (void)switchSelected
+- (IBAction)switchSelected:(id)sender
 {
     [model makeSelectedReference];
 }
 
-- (void)toggleColumn:(id)sender
+- (IBAction)toggleColumn:(id)sender
 {
     NSMenuItem *mi = sender;
     BOOL checked = [[[table columns] model] toggleMenuItem:[mi tag]];
     [mi setState:checked ? NSOnState : NSOffState];
 }
 
-- (void)toggleDetailsPanel
+- (IBAction)toggleDetailsPanel:(id)sender
 {
     [[app detailsPanel] toggleVisibility];
     [self updateOptionSegments];
 }
 
-- (void)toggleDelta
+- (IBAction)toggleDelta:(id)sender
 {
     [table setDeltaValuesMode:![table deltaValuesMode]];
     [self updateOptionSegments];
 }
 
-- (void)togglePowerMarker
+- (IBAction)togglePowerMarker:(id)sender
 {
     [table setPowerMarkerMode:![table powerMarkerMode]];
     [self updateOptionSegments];
 }
 
-- (void)toggleQuicklookPanel
+- (IBAction)toggleQuicklookPanel:(id)sender
 {
     if ([QLPreviewPanel sharedPreviewPanelExists] && [[QLPreviewPanel sharedPreviewPanel] isVisible]) {
         [[QLPreviewPanel sharedPreviewPanel] orderOut:nil];
