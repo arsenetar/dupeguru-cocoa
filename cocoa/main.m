@@ -10,12 +10,9 @@ http://www.gnu.org/licenses/gpl-3.0.html
 #import <Python.h>
 #import <wchar.h>
 #import <locale.h>
-#import "AppDelegate.h"
-#import "MainMenu_UI.h"
 
 int main(int argc, char *argv[])
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     /* We have to set the locate to UTF8 for mbstowcs() to correctly convert non-ascii chars in paths */
     setlocale(LC_ALL, "en_US.UTF-8");
     NSString *respath = [[NSBundle mainBundle] resourcePath];
@@ -36,14 +33,7 @@ int main(int argc, char *argv[])
         PyThreadState_Swap(NULL);
         PyEval_ReleaseLock();
     }
-    
-    [NSApplication sharedApplication];
-    AppDelegate *appDelegate = [[AppDelegate alloc] init];
-    [NSApp setDelegate:appDelegate];
-    [NSApp setMainMenu:createMainMenu_UI(appDelegate)];
-    [appDelegate finalizeInit];
-    [pool release];
-    [NSApp run];
+    int result = NSApplicationMain(argc,  (const char **) argv);
     Py_Finalize();
-    return 0;
+    return result;
 }

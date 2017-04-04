@@ -40,7 +40,7 @@ appModeSelector.action = Action(owner, 'changeAppMode:')
 addButton.action = Action(owner, 'popupAddDirectoryMenu:')
 removeButton.action = Action(owner, 'removeSelectedDirectory')
 loadResultsButton.action = Action(owner, 'popupLoadRecentMenu:')
-scanButton.action = Action(None, 'startScanning')
+scanButton.action = Action(None, 'startScanning:')
 
 directoryOutline.font = Font(FontFamily.System, FontSize.SmallSystem)
 col = directoryOutline.addColumn('name', "Name", 100)

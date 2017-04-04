@@ -156,7 +156,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
         while ([m numberOfItems] > 0) {
             [m removeItemAtIndex:0];
         }
-        NSMenuItem *mi = [m addItemWithTitle:NSLocalizedString(@"Load from file...", @"") action:@selector(loadResults) keyEquivalent:@""];
+        NSMenuItem *mi = [m addItemWithTitle:NSLocalizedString(@"Load from file...", @"") action:@selector(loadResults:) keyEquivalent:@""];
         [mi setTarget:_app];
         [m addItem:[NSMenuItem separatorItem]];
         [[_app recentResults] fillMenu:m];
@@ -164,7 +164,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
         [[loadRecentButtonPopUp cell] performClickWithFrame:[sender frame] inView:[sender superview]];
     }
     else {
-        [_app loadResults];
+        [_app loadResults:sender];
     }
 }
 

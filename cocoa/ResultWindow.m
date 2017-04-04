@@ -36,7 +36,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [[table columns] setColumnsAsReadOnly];
     [self fillColumnsMenu];
     [matches setTarget:self];
-    [matches setDoubleAction:@selector(openClicked)];
+    [matches setDoubleAction:@selector(openClicked:)];
     [self adjustUIToLocalization];
     return self;
 }
@@ -64,7 +64,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     }
     [[app columnsMenu] addItem:[NSMenuItem separatorItem]];
     NSMenuItem *mi = [[app columnsMenu] addItemWithTitle:NSLocalizedString(@"Reset to Default", @"")
-        action:@selector(resetColumnsToDefault) keyEquivalent:@""];
+                                                  action:@selector(resetColumnsToDefault:) keyEquivalent:@""];
     [mi setTarget:self];
 }
 
@@ -208,6 +208,16 @@ http://www.gnu.org/licenses/gpl-3.0.html
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [model setRemoveEmptyFolders:n2b([ud objectForKey:@"removeEmptyFolders"])];
     [model deleteMarked];
+}
+
+- (IBAction)exportToXHTML:(id)sender
+{
+    [model exportToXHTML];
+}
+
+- (IBAction)exportToCSV:(id)sender
+{
+    [model exportToCSV];
 }
 
 - (IBAction)filter:(id)sender

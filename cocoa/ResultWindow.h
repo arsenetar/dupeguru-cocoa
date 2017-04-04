@@ -49,6 +49,8 @@ http://www.gnu.org/licenses/gpl-3.0.html
 - (IBAction)changeOptions:(id)sender;
 - (IBAction)copyMarked:(id)sender;
 - (IBAction)trashMarked:(id)sender;
+- (IBAction)exportToXHTML:(id)sender;
+- (IBAction)exportToCSV:(id)sender;
 - (IBAction)filter:(id)sender;
 - (IBAction)focusOnFilterField:(id)sender;
 - (IBAction)ignoreSelected:(id)sender;

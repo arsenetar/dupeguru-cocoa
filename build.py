@@ -84,7 +84,6 @@ def build_xibless(dest='cocoa/autogen'):
         ('problem_dialog.py', 'ProblemDialog_UI'),
         ('directory_panel.py', 'DirectoryPanel_UI'),
         ('prioritize_dialog.py', 'PrioritizeDialog_UI'),
-        ('main_menu.py', 'MainMenu_UI'),
         ('details_panel.py', 'DetailsPanel_UI'),
         ('details_panel_picture.py', 'DetailsPanelPicture_UI'),
     ]

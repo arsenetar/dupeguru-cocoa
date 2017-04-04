@@ -64,9 +64,8 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [[NSUserDefaults standardUserDefaults] registerDefaults:d];
 }
 
-- (id)init
+- (void)awakeFromNib
 {
-    self = [super init];
     model = [[PyDupeGuru alloc] init];
     [model bindCallback:createCallback(@"DupeGuruView", self)];
     NSMutableIndexSet *contentsIndexes = [NSMutableIndexSet indexSet];
@@ -82,14 +81,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [NSValueTransformer setValueTransformer:vtScanTypeIsNotContent forName:@"vtScanTypeMusicIsNotContent"];
     VTIsIntIn *vtScanTypeIsTag = [[[VTIsIntIn alloc] initWithValues:[NSIndexSet indexSetWithIndex:3] reverse:NO] autorelease];
     [NSValueTransformer setValueTransformer:vtScanTypeIsTag forName:@"vtScanTypeIsTag"];
-    return self;
-}
-
-- (void)finalizeInit
-{
-    // We can only finalize initialization once the main menu has been created, which cannot happen
-    // before AppDelegate is created.
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     _recentResults = [[HSRecentFiles alloc] initWithName:@"recentResults" menu:recentResultsMenu];
     [_recentResults setDelegate:self];
     _directoryPanel = [[DirectoryPanel alloc] initWithParentApp:self];
@@ -144,8 +135,8 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [model setMixFileKind:n2b([ud objectForKey:@"mixFileKind"])];
     [model setIgnoreHardlinkMatches:n2b([ud objectForKey:@"ignoreHardlinkMatches"])];
     [model setMatchSimilarWords:n2b([ud objectForKey:@"matchSimilarWords"])];
-    int smallFileThreshold = [ud integerForKey:@"smallFileThreshold"]; // In KB
-    int sizeThreshold = [ud boolForKey:@"ignoreSmallFiles"] ? smallFileThreshold * 1024 : 0; // The py side wants bytes
+    NSInteger smallFileThreshold = [ud integerForKey:@"smallFileThreshold"]; // In KB
+    NSInteger sizeThreshold = [ud boolForKey:@"ignoreSmallFiles"] ? smallFileThreshold * 1024 : 0; // The py side wants bytes
     [model setSizeThreshold:sizeThreshold];
     [model enable:n2b([ud objectForKey:@"scanTagTrack"]) scanForTag:@"track"];
     [model enable:n2b([ud objectForKey:@"scanTagArtist"]) scanForTag:@"artist"];
@@ -192,7 +183,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 }
 
 /* Actions */
-- (void)clearPictureCache
+- (IBAction)clearPictureCache:(id)sender
 {
     NSString *msg = NSLocalizedString(@"Do you really want to remove all your cached picture analysis?", @"");
     if ([Dialogs askYesNo:msg] == NSAlertSecondButtonReturn) // NO
@@ -200,7 +191,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [model clearPictureCache];
 }
 
-- (void)loadResults
+- (IBAction)loadResults:(id)sender
 {
     NSOpenPanel *op = [NSOpenPanel openPanel];
     [op setCanChooseFiles:YES];
@@ -216,12 +207,12 @@ http://www.gnu.org/licenses/gpl-3.0.html
     }
 }
 
-- (void)openWebsite
+- (IBAction)openWebsite:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.hardcoded.net/dupeguru/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.hardcoded.net/dupeguru/"]];
 }
 
-- (void)openHelp
+- (IBAction)openHelp:(id)sender
 {
     NSBundle *b = [NSBundle mainBundle];
     NSString *p = [b pathForResource:@"index" ofType:@"html" inDirectory:@"help"];
@@ -229,7 +220,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [[NSWorkspace sharedWorkspace] openURL:u];
 }
 
-- (void)showAboutBox
+- (IBAction)showAboutBox:(id)sender
 {
     if (_aboutBox == nil) {
         _aboutBox = [[HSAboutBox alloc] initWithApp:model];
@@ -237,12 +228,12 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [[_aboutBox window] makeKeyAndOrderFront:nil];
 }
 
-- (void)showDirectoryWindow
+- (IBAction)showDirectoryWindow:(id)sender
 {
     [[[self directoryPanel] window] makeKeyAndOrderFront:nil];
 }
 
-- (void)showPreferencesPanel
+- (IBAction)showPreferencesPanel:(id)sender
 {
     if (_preferencesPanel == nil) {
         NSWindow *window;
@@ -261,17 +252,17 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [_preferencesPanel showWindow:nil];
 }
 
-- (void)showResultWindow
+- (IBAction)showResultWindow:(id)sender
 {
     [[[self resultWindow] window] makeKeyAndOrderFront:nil];
 }
 
-- (void)showIgnoreList
+- (IBAction)showIgnoreList:(id)sender
 {
     [model showIgnoreList];
 }
 
-- (void)startScanning
+- (IBAction)startScanning:(id)sender
 {
     [[self directoryPanel] startDuplicateScan];
 }

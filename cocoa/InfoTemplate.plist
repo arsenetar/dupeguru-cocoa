@@ -28,6 +28,8 @@
 	<string>{version}</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© Hardcoded Software, 2016</string>
 	<key>SUFeedURL</key>

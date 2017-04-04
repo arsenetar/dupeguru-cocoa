@@ -21,8 +21,8 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 @interface AppDelegate : NSObject <NSFileManagerDelegate>
 {
-    NSMenu *recentResultsMenu;
-    NSMenu *columnsMenu;
+    IBOutlet NSMenu *recentResultsMenu;
+    IBOutlet NSMenu *columnsMenu;
     
     PyDupeGuru *model;
     ResultWindow *_resultWindow;
@@ -47,7 +47,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 - (void)setScanOptions;
 
 /* Public */
-- (void)finalizeInit;
 - (ResultWindow *)resultWindow;
 - (DirectoryPanel *)directoryPanel;
 - (DetailsPanel *)detailsPanel;
@@ -63,16 +62,16 @@ http://www.gnu.org/licenses/gpl-3.0.html
 - (void)recentFileClicked:(NSString *)path;
 
 /* Actions */
-- (void)clearPictureCache;
-- (void)loadResults;
-- (void)openWebsite;
-- (void)openHelp;
-- (void)showAboutBox;
-- (void)showDirectoryWindow;
-- (void)showPreferencesPanel;
-- (void)showResultWindow;
-- (void)showIgnoreList;
-- (void)startScanning;
+- (IBAction)clearPictureCache:(id)sender;
+- (IBAction)loadResults:(id)sender;
+- (IBAction)openWebsite:(id)sender;
+- (IBAction)openHelp:(id)sender;
+- (IBAction)showAboutBox:(id)sender;
+- (IBAction)showDirectoryWindow:(id)sender;
+- (IBAction)showPreferencesPanel:(id)sender;
+- (IBAction)showResultWindow:(id)sender;
+- (IBAction)showIgnoreList:(id)sender;
+- (IBAction)startScanning:(id)sender;
 
 /* model --> view */
 - (void)showMessage:(NSString *)msg;
