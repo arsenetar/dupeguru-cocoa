@@ -82,7 +82,6 @@ def build_xibless(dest='cocoa/autogen'):
     FNPAIRS = [
         ('problem_dialog.py', 'ProblemDialog_UI'),
         ('directory_panel.py', 'DirectoryPanel_UI'),
-        ('prioritize_dialog.py', 'PrioritizeDialog_UI'),
     ]
     for srcname, dstname in FNPAIRS:
         xibless.generate(

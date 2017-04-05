@@ -1,5 +1,5 @@
 /* 
-Copyright 2015 Hardcoded Software (http://www.hardcoded.net)
+Copyright 2017 Virgil Dupras
 
 This software is licensed under the "GPLv3" License as described in the "LICENSE" file, 
 which should be included with this package. The terms are also available at 
@@ -7,7 +7,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 #import "PrioritizeDialog.h"
-#import "PrioritizeDialog_UI.h"
 #import "HSPyUtil.h"
 
 @implementation PrioritizeDialog
@@ -19,8 +18,8 @@ http://www.gnu.org/licenses/gpl-3.0.html
 - (id)initWithApp:(PyDupeGuru *)aApp
 {
     self = [super initWithWindowNibName:@"PrioritizeDialog"];
+    [self window];
     model = [[PyPrioritizeDialog alloc] initWithApp:[aApp pyRef]];
-    [self setWindow:createPrioritizeDialog_UI(self)];
     categoryPopUp = [[HSPopUpList alloc] initWithPyRef:[[self model] categoryList] popupView:categoryPopUpView];
     criteriaList = [[HSSelectableList alloc] initWithPyRef:[[self model] criteriaList] tableView:criteriaTableView];
     prioritizationList = [[PrioritizeList alloc] initWithPyRef:[[self model] prioritizationList] tableView:prioritizationTableView];
@@ -42,13 +41,23 @@ http://www.gnu.org/licenses/gpl-3.0.html
     return (PyPrioritizeDialog *)model;
 }
 
-- (void)ok
+- (IBAction)addSelected:(id)sender
+{
+    [[self model] addSelected];
+}
+
+- (IBAction)removeSelected:(id)sender
+{
+    [[self model] removeSelected];
+}
+
+- (IBAction)ok:(id)sender
 {
     [NSApp stopModal];
     [self close];
 }
 
-- (void)cancel
+- (IBAction)cancel:(id)sender
 {
     [NSApp abortModal];
     [self close];
