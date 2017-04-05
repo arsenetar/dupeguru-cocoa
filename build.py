@@ -80,7 +80,6 @@ def build_xibless(dest='cocoa/autogen'):
     import xibless
     ensure_folder(dest)
     FNPAIRS = [
-        ('deletion_options.py', 'DeletionOptions_UI'),
         ('problem_dialog.py', 'ProblemDialog_UI'),
         ('directory_panel.py', 'DirectoryPanel_UI'),
         ('prioritize_dialog.py', 'PrioritizeDialog_UI'),

@@ -1,5 +1,5 @@
 /* 
-Copyright 2015 Hardcoded Software (http://www.hardcoded.net)
+Copyright 2017 Virgil Dupras
 
 This software is licensed under the "GPLv3" License as described in the "LICENSE" file, 
 which should be included with this package. The terms are also available at 
@@ -7,7 +7,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 #import "DeletionOptions.h"
-#import "DeletionOptions_UI.h"
 #import "HSPyUtil.h"
 
 @implementation DeletionOptions
@@ -19,9 +18,9 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 - (id)initWithPyRef:(PyObject *)aPyRef
 {
-    self = [super initWithWindow:nil];
+    self = [super initWithWindowNibName:@"DeletionOptions"];
+    [self window];
     model = [[PyDeletionOptions alloc] initWithModel:aPyRef];
-    [self setWindow:createDeletionOptions_UI(self)];
     [model bindCallback:createCallback(@"DeletionOptionsView", self)];
     return self;
 }
@@ -32,19 +31,19 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [super dealloc];
 }
 
-- (void)updateOptions
+- (IBAction)updateOptions:(id)sender
 {
     [model setLinkDeleted:[linkButton state] == NSOnState];
     [model setUseHardlinks:[linkTypeRadio selectedColumn] == 1];
     [model setDirect:[directButton state] == NSOnState];
 }
 
-- (void)proceed
+- (IBAction)proceed:(id)sender
 {
     [NSApp stopModalWithCode:NSOKButton];
 }
 
-- (void)cancel
+- (IBAction)cancel:(id)sender
 {
     [NSApp stopModalWithCode:NSCancelButton];
 }

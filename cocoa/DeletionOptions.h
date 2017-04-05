@@ -1,5 +1,5 @@
 /* 
-Copyright 2015 Hardcoded Software (http://www.hardcoded.net)
+Copyright 2017 Virgil Dupras
 
 This software is licensed under the "GPLv3" License as described in the "LICENSE" file, 
 which should be included with this package. The terms are also available at 
@@ -14,10 +14,10 @@ http://www.gnu.org/licenses/gpl-3.0.html
     
     PyDeletionOptions *model;
     
-    NSTextField *messageTextField;
-    NSButton *linkButton;
-    NSMatrix *linkTypeRadio;
-    NSButton *directButton;
+    IBOutlet NSTextField *messageTextField;
+    IBOutlet NSButton *linkButton;
+    IBOutlet NSMatrix *linkTypeRadio;
+    IBOutlet NSButton *directButton;
 }
 
 @property (readwrite, retain) NSTextField *messageTextField;
@@ -27,7 +27,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 - (id)initWithPyRef:(PyObject *)aPyRef;
 
-- (void)updateOptions;
-- (void)proceed;
-- (void)cancel;
+- (IBAction)updateOptions:(id)sender;
+- (IBAction)proceed:(id)sender;
+- (IBAction)cancel:(id)sender;
 @end
