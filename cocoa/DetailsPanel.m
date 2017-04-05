@@ -1,5 +1,5 @@
 /* 
-Copyright 2015 Hardcoded Software (http://www.hardcoded.net)
+Copyright 2017 Virgil Dupras
 
 This software is licensed under the "GPLv3" License as described in the "LICENSE" file, 
 which should be included with this package. The terms are also available at 
@@ -8,7 +8,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 #import "DetailsPanel.h"
 #import "HSPyUtil.h"
-#import "DetailsPanel_UI.h"
 
 @implementation DetailsPanel
 
@@ -16,8 +15,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 - (id)initWithPyRef:(PyObject *)aPyRef
 {
-    self = [super initWithWindow:nil];
-    [self setWindow:[self createWindow]];
+    self = [super initWithWindowNibName:[self getWindowNibName]];
     model = [[PyDetailsPanel alloc] initWithModel:aPyRef];
     [model bindCallback:createCallback(@"DetailsPanelView", self)];
     return self;
@@ -34,9 +32,9 @@ http://www.gnu.org/licenses/gpl-3.0.html
     return (PyDetailsPanel *)model;
 }
 
-- (NSWindow *)createWindow
+- (NSString *)getWindowNibName
 {
-    return createDetailsPanel_UI(self);
+    return @"DetailsPanel";
 }
 
 - (void)refreshDetails
