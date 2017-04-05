@@ -79,15 +79,6 @@ def cocoa_app():
 def build_xibless(dest='cocoa/autogen'):
     import xibless
     ensure_folder(dest)
-    FNPAIRS = [
-        ('problem_dialog.py', 'ProblemDialog_UI'),
-        ('directory_panel.py', 'DirectoryPanel_UI'),
-    ]
-    for srcname, dstname in FNPAIRS:
-        xibless.generate(
-            op.join('cocoa', 'ui', srcname), op.join(dest, dstname),
-            localizationTable='Localizable'
-        )
     for appmode in ('standard', 'music', 'picture'):
         xibless.generate(
             op.join('cocoa', 'ui', 'preferences_panel.py'),

@@ -9,7 +9,6 @@
         <customObject id="-2" userLabel="File's Owner" customClass="DeletionOptions">
             <connections>
                 <outlet property="directButton" destination="35" id="47"/>
-                <outlet property="hardlinkButton" destination="3" id="46"/>
                 <outlet property="linkButton" destination="3" id="dBw-fr-16j"/>
                 <outlet property="linkTypeRadio" destination="WGF-jA-3aM" id="Wz8-lZ-4Rx"/>
                 <outlet property="messageTextField" destination="43" id="45"/>
@@ -17,7 +16,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Deletion Options" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="196" y="240" width="449" height="244"/>

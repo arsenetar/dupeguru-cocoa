@@ -264,7 +264,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 - (IBAction)startScanning:(id)sender
 {
-    [[self directoryPanel] startDuplicateScan];
+    [[self directoryPanel] startDuplicateScan:sender];
 }
 
 

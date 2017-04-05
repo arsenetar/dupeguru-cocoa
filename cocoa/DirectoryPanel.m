@@ -1,5 +1,5 @@
 /* 
-Copyright 2015 Hardcoded Software (http://www.hardcoded.net)
+Copyright 2017 Virgil Dupras
 
 This software is licensed under the "GPLv3" License as described in the "LICENSE" file, 
 which should be included with this package. The terms are also available at 
@@ -7,7 +7,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 #import "DirectoryPanel.h"
-#import "DirectoryPanel_UI.h"
 #import "Dialogs.h"
 #import "Utils.h"
 #import "AppDelegate.h"
@@ -25,8 +24,8 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 - (id)initWithParentApp:(AppDelegate *)aParentApp
 {
-    self = [super initWithWindow:nil];
-    [self setWindow:createDirectoryPanel_UI(self)];
+    self = [super initWithWindowNibName:@"DirectoryPanel"];
+    [self window];
     _app = aParentApp;
     model = [_app model];
     [[self window] setTitle:[model appName]];
@@ -121,7 +120,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     }
 }
 
-- (void)changeAppMode:(id)sender
+- (IBAction)changeAppMode:(id)sender
 {
     NSInteger appMode;
     NSUInteger selectedSegment = self.appModeSelector.selectedSegment;
@@ -138,7 +137,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [self fillScanTypeMenu];
 }
 
-- (void)popupAddDirectoryMenu:(id)sender
+- (IBAction)popupAddDirectoryMenu:(id)sender
 {
     if ((!_alwaysShowPopUp) && ([[_recentDirectories filepaths] count] == 0)) {
         [self askForDirectory];
@@ -149,7 +148,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     }
 }
 
-- (void)popupLoadRecentMenu:(id)sender
+- (IBAction)popupLoadRecentMenu:(id)sender
 {
     if ([[[_app recentResults] filepaths] count] > 0) {
         NSMenu *m = [loadRecentButtonPopUp menu];
@@ -168,14 +167,14 @@ http://www.gnu.org/licenses/gpl-3.0.html
     }
 }
 
-- (void)removeSelectedDirectory
+- (IBAction)removeSelectedDirectory:(id)sender
 {
     [[self window] makeKeyAndOrderFront:nil];
     [[outline model] removeSelectedDirectory];
     [self refreshRemoveButtonText];
 }
 
-- (void)startDuplicateScan
+- (IBAction)startDuplicateScan:(id)sender
 {
     if ([model resultsAreModified]) {
         if ([Dialogs askYesNo:NSLocalizedString(@"You have unsaved results, do you really want to continue?", @"")] == NSAlertSecondButtonReturn) // NO

@@ -1,5 +1,5 @@
 /* 
-Copyright 2015 Hardcoded Software (http://www.hardcoded.net)
+Copyright 2017 Virgil Dupras
 
 This software is licensed under the "GPLv3" License as described in the "LICENSE" file, 
 which should be included with this package. The terms are also available at 
@@ -21,13 +21,13 @@ http://www.gnu.org/licenses/gpl-3.0.html
     HSRecentFiles *_recentDirectories;
     DirectoryOutline *outline;
     BOOL _alwaysShowPopUp;
-    NSSegmentedControl *appModeSelector;
-    NSPopUpButton *scanTypePopup;
-    NSPopUpButton *addButtonPopUp;
-    NSPopUpButton *loadRecentButtonPopUp;
-    HSOutlineView *outlineView;
-    NSButton *removeButton;
-    NSButton *loadResultsButton;
+    IBOutlet NSSegmentedControl *appModeSelector;
+    IBOutlet NSPopUpButton *scanTypePopup;
+    IBOutlet NSPopUpButton *addButtonPopUp;
+    IBOutlet NSPopUpButton *loadRecentButtonPopUp;
+    IBOutlet HSOutlineView *outlineView;
+    IBOutlet NSButton *removeButton;
+    IBOutlet NSButton *loadResultsButton;
 }
 
 @property (readwrite, retain) NSSegmentedControl *appModeSelector;
@@ -45,10 +45,11 @@ http://www.gnu.org/licenses/gpl-3.0.html
 - (void)adjustUIToLocalization;
 
 - (void)askForDirectory;
-- (void)popupAddDirectoryMenu:(id)sender;
-- (void)popupLoadRecentMenu:(id)sender;
-- (void)removeSelectedDirectory;
-- (void)startDuplicateScan;
+- (IBAction)changeAppMode:(id)sender;
+- (IBAction)popupAddDirectoryMenu:(id)sender;
+- (IBAction)popupLoadRecentMenu:(id)sender;
+- (IBAction)removeSelectedDirectory:(id)sender;
+- (IBAction)startDuplicateScan:(id)sender;
 
 - (void)addDirectory:(NSString *)directory;
 - (void)refreshRemoveButtonText;
