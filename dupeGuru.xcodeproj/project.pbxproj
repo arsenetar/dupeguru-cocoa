@@ -76,7 +76,6 @@
 		CE97215B1E74E41D00A598C9 /* PyStatsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721341E74E41D00A598C9 /* PyStatsLabel.m */; };
 		CE97215C1E74E41D00A598C9 /* PyTable.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721361E74E41D00A598C9 /* PyTable.m */; };
 		CE97215D1E74E41D00A598C9 /* PyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9721381E74E41D00A598C9 /* PyTextField.m */; };
-		CE97215F1E74E41D00A598C9 /* XiblessSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97213C1E74E41D00A598C9 /* XiblessSupport.m */; };
 		CE9EF6DF1E9345100089CA20 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9EF6DD1E9345100089CA20 /* MainMenu.xib */; };
 		CED88C1F1E763F2700C9B98C /* py in Resources */ = {isa = PBXBuildFile; fileRef = CED88C1E1E763F2700C9B98C /* py */; };
 		CEF093DE1E9474F700CD0BF3 /* DeletionOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF093DC1E9474F700CD0BF3 /* DeletionOptions.xib */; };
@@ -397,8 +396,6 @@
 		CE9721361E74E41D00A598C9 /* PyTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PyTable.m; path = cocoa/autogen/PyTable.m; sourceTree = "<group>"; };
 		CE9721371E74E41D00A598C9 /* PyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PyTextField.h; path = cocoa/autogen/PyTextField.h; sourceTree = "<group>"; };
 		CE9721381E74E41D00A598C9 /* PyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PyTextField.m; path = cocoa/autogen/PyTextField.m; sourceTree = "<group>"; };
-		CE97213B1E74E41D00A598C9 /* XiblessSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XiblessSupport.h; path = cocoa/autogen/XiblessSupport.h; sourceTree = "<group>"; };
-		CE97213C1E74E41D00A598C9 /* XiblessSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XiblessSupport.m; path = cocoa/autogen/XiblessSupport.m; sourceTree = "<group>"; };
 		CE9C2E9D1E74E1640099B9FB /* dupeGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dupeGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9EF6DE1E9345100089CA20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = cocoa/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		CE9EF6E11E9345490089CA20 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = cocoa/fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -700,8 +697,6 @@
 				CE9721361E74E41D00A598C9 /* PyTable.m */,
 				CE9721371E74E41D00A598C9 /* PyTextField.h */,
 				CE9721381E74E41D00A598C9 /* PyTextField.m */,
-				CE97213B1E74E41D00A598C9 /* XiblessSupport.h */,
-				CE97213C1E74E41D00A598C9 /* XiblessSupport.m */,
 			);
 			name = autogen;
 			sourceTree = "<group>";
@@ -850,7 +845,6 @@
 				CE9720ED1E74E40300A598C9 /* DirectoryPanel.m in Sources */,
 				CE6F7DF01E74E9E4004C0518 /* Utils.m in Sources */,
 				CE6F7E081E74EA12004C0518 /* HSProgressWindow.m in Sources */,
-				CE97215F1E74E41D00A598C9 /* XiblessSupport.m in Sources */,
 				CE9721511E74E41D00A598C9 /* PyDupeGuru.m in Sources */,
 				CE9720EC1E74E40300A598C9 /* DirectoryOutline.m in Sources */,
 				CE9720EE1E74E40300A598C9 /* IgnoreListDialog.m in Sources */,
