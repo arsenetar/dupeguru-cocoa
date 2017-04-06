@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSWindowController">
+            <connections>
+                <outlet property="window" destination="2" id="112"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <userDefaultsController representsSharedInstance="YES" id="1" userLabel="Shared Defaults"/>
+        <window title="dupeGuru Preferences (Music)" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="2" userLabel="preferences">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="92" y="259" width="406" height="306"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" misplaced="YES" id="3">
+                <rect key="frame" x="0.0" y="0.0" width="406" height="306"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="18">
+                        <rect key="frame" x="244" y="5" width="148" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Reset to Defaults" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="45">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="revertToInitialValues:" target="1" id="113"/>
+                        </connections>
+                    </button>
+                    <tabView misplaced="YES" id="115">
+                        <rect key="frame" x="13" y="31" width="380" height="269"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="Basic" identifier="1" id="116">
+                                <view key="view" id="119">
+                                    <rect key="frame" x="10" y="33" width="360" height="223"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <slider verticalHuggingPriority="750" misplaced="YES" id="27">
+                                            <rect key="frame" x="118" y="201" width="190" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <sliderCell key="cell" alignment="left" minValue="1" maxValue="100" doubleValue="80" tickMarkPosition="above" sliderType="linear" id="28">
+                                                <font key="font" size="12" name="Helvetica"/>
+                                            </sliderCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="IEC-EW-O84">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeMusicIsNotContent</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.minMatchPercentage" id="72"/>
+                                                <outlet property="nextKeyView" destination="9" id="82"/>
+                                            </connections>
+                                        </slider>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="26">
+                                            <rect key="frame" x="120" y="184" width="80" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="More results" id="29">
+                                                <font key="font" metaFont="label"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="25">
+                                            <rect key="frame" x="226" y="184" width="80" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Fewer results" id="30">
+                                                <font key="font" metaFont="label"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="24">
+                                            <rect key="frame" x="15" y="206" width="100" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Filter hardness:" id="31">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="21">
+                                            <rect key="frame" x="16" y="71" width="330" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Word weighting" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="41">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="mEk-iv-joX">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeMusicIsNotContent</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.wordWeighting" id="87"/>
+                                                <outlet property="nextKeyView" destination="17" id="73"/>
+                                            </connections>
+                                        </button>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="20">
+                                            <rect key="frame" x="16" y="31" width="325" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Can mix file kind" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="42">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="value" keyPath="values.mixFileKind" id="93"/>
+                                                <outlet property="nextKeyView" destination="12" id="109"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="19">
+                                            <rect key="frame" x="314" y="206" width="31" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="43">
+                                                <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" hasThousandSeparators="NO" thousandSeparator="," id="44">
+                                                    <attributedString key="attributedStringForZero">
+                                                        <fragment content="0"/>
+                                                    </attributedString>
+                                                    <decimal key="minimum" value="NaN"/>
+                                                    <decimal key="maximum" value="NaN"/>
+                                                </numberFormatter>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="1" name="value" keyPath="values.minMatchPercentage" id="102"/>
+                                            </connections>
+                                        </textField>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="17">
+                                            <rect key="frame" x="16" y="51" width="330" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Match similar words" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="46">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="D1J-Cd-t9h">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeMusicIsNotContent</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.matchSimilarWords" id="83"/>
+                                                <outlet property="nextKeyView" destination="20" id="111"/>
+                                            </connections>
+                                        </button>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="11">
+                                            <rect key="frame" x="16" y="11" width="330" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Remove empty folders after delete and move" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="62">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="value" keyPath="values.removeEmptyFolders" id="103"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="10">
+                                            <rect key="frame" x="15" y="131" width="100" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Tags to scan:" id="63">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="9">
+                                            <rect key="frame" x="25" y="111" width="66" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Track" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="64">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="v2y-u6-gpL">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeIsTag</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.scanTagTrack" id="71"/>
+                                                <outlet property="nextKeyView" destination="8" id="84"/>
+                                            </connections>
+                                        </button>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="8">
+                                            <rect key="frame" x="95" y="111" width="66" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Artist" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="65">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="N1M-yd-Fei">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeIsTag</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.scanTagArtist" id="97"/>
+                                                <outlet property="nextKeyView" destination="7" id="99"/>
+                                            </connections>
+                                        </button>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="7">
+                                            <rect key="frame" x="165" y="111" width="66" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Album" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="66">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="Drg-pN-BWb">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeIsTag</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.scanTagAlbum" id="89"/>
+                                                <outlet property="nextKeyView" destination="6" id="88"/>
+                                            </connections>
+                                        </button>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="6">
+                                            <rect key="frame" x="25" y="91" width="66" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Title" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="67">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="lrt-ME-8Kt">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeIsTag</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.scanTagTitle" id="79"/>
+                                                <outlet property="nextKeyView" destination="5" id="90"/>
+                                            </connections>
+                                        </button>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="5">
+                                            <rect key="frame" x="95" y="91" width="66" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Genre" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="68">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="1V1-MS-Wg5">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeIsTag</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.scanTagGenre" id="94"/>
+                                                <outlet property="nextKeyView" destination="4" id="107"/>
+                                            </connections>
+                                        </button>
+                                        <button misplaced="YES" imageHugsTitle="YES" id="4">
+                                            <rect key="frame" x="165" y="91" width="66" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Year" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="69">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="enabled" keyPath="values.scanTypeMusic" id="dkK-l1-CQf">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">vtScanTypeIsTag</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="1" name="value" keyPath="values.scanTagYear" id="74"/>
+                                                <outlet property="nextKeyView" destination="21" id="108"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="133">
+                                            <rect key="frame" x="15" y="156" width="100" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Font size:" id="136">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <comboBox verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="134">
+                                            <rect key="frame" x="120" y="152" width="69" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="6" id="135">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>11</string>
+                                                    <string>12</string>
+                                                    <string>13</string>
+                                                    <string>14</string>
+                                                    <string>18</string>
+                                                    <string>24</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                            <connections>
+                                                <binding destination="1" name="value" keyPath="values.TableFontSize" id="137"/>
+                                            </connections>
+                                        </comboBox>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Advanced" identifier="2" id="117">
+                                <view key="view" id="118">
+                                    <rect key="frame" x="10" y="33" width="360" height="223"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button imageHugsTitle="YES" id="12">
+                                            <rect key="frame" x="15" y="204" width="340" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Use regular expressions when filtering" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="61">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="value" keyPath="values.useRegexpFilter" id="106"/>
+                                                <outlet property="nextKeyView" destination="11" id="104"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" id="15">
+                                            <rect key="frame" x="14" y="98" width="332" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Copy and Move:" id="54">
+                                                <font key="font" metaFont="label"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" id="120">
+                                            <rect key="frame" x="14" y="141" width="332" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Custom Command (arguments: %d for dupe, %r for ref):" id="121">
+                                                <font key="font" metaFont="label"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="14">
+                                            <rect key="frame" x="14" y="66" width="256" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="Right in destination" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="59" id="55">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <menu key="menu" title="OtherViews" id="56">
+                                                    <items>
+                                                        <menuItem title="Right in destination" state="on" id="59"/>
+                                                        <menuItem title="Recreate relative path" id="57"/>
+                                                        <menuItem title="Recreate absolute path" id="58"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="1" name="selectedIndex" keyPath="values.recreatePathType" id="98"/>
+                                                <outlet property="nextKeyView" destination="18" id="86"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" id="122">
+                                            <rect key="frame" x="17" y="119" width="326" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="123">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="1" name="value" keyPath="values.CustomCommand" id="124"/>
+                                            </connections>
+                                        </textField>
+                                        <button imageHugsTitle="YES" id="125">
+                                            <rect key="frame" x="15" y="184" width="340" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Ignore duplicates hardlinking to the same file" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="126">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="value" keyPath="values.ignoreHardlinkMatches" id="128"/>
+                                            </connections>
+                                        </button>
+                                        <button imageHugsTitle="YES" id="129">
+                                            <rect key="frame" x="15" y="164" width="340" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Debug mode (restart required)" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="130">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="1" name="value" keyPath="values.DebugMode" id="132"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="132" y="133"/>
+        </window>
+    </objects>
+</document>

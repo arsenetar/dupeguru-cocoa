@@ -14,9 +14,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 #import "Utils.h"
 #import "ValueTransformers.h"
 #import "DetailsPanelPicture.h"
-#import "PreferencesPanelStandard_UI.h"
-#import "PreferencesPanelMusic_UI.h"
-#import "PreferencesPanelPicture_UI.h"
 
 @implementation AppDelegate
 
@@ -236,18 +233,15 @@ http://www.gnu.org/licenses/gpl-3.0.html
 - (IBAction)showPreferencesPanel:(id)sender
 {
     if (_preferencesPanel == nil) {
-        NSWindow *window;
+        NSString *nibName = @"Preferences";
         NSInteger appMode = [model getAppMode];
         if (appMode == AppModePicture) {
-            window = createPreferencesPanelPicture_UI(nil);
+            nibName = @"PreferencesPicture";
         }
         else if (appMode == AppModeMusic) {
-            window = createPreferencesPanelMusic_UI(nil);
+            nibName = @"PreferencesMusic";
         }
-        else {
-            window = createPreferencesPanelStandard_UI(nil);
-        }
-        _preferencesPanel = [[NSWindowController alloc] initWithWindow:window];
+        _preferencesPanel = [[NSWindowController alloc] initWithWindowNibName:nibName];
     }
     [_preferencesPanel showWindow:nil];
 }

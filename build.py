@@ -54,10 +54,6 @@ def parse_args():
         help="Build only Cocoa executable"
     )
     parser.add_option(
-        '--xibless', action='store_true', dest='xibless',
-        help="Build only xibless UIs"
-    )
-    parser.add_option(
         '--updatepot', action='store_true', dest='updatepot',
         help="Generate .pot files from source code."
     )
@@ -76,21 +72,8 @@ def cocoa_app():
     app_path = 'build/dupeGuru.app'
     return OSXAppStructure(app_path)
 
-def build_xibless(dest='cocoa/autogen'):
-    import xibless
-    ensure_folder(dest)
-    for appmode in ('standard', 'music', 'picture'):
-        xibless.generate(
-            op.join('cocoa', 'ui', 'preferences_panel.py'),
-            op.join(dest, 'PreferencesPanel%s_UI' % appmode.capitalize()),
-            localizationTable='Localizable',
-            args={'appmode': appmode},
-        )
-
 def build_cocoa(dev):
-    
     build_localizations()
-    build_xibless()
     build_cocoa_proxy_module()
     build_cocoa_bridging_interfaces()
 
@@ -155,7 +138,6 @@ def build_localizations():
 def build_updatepot():
     print("Updating Cocoa strings file.")
     loc.generate_cocoa_strings_from_code('cocoalib', 'cocoalib/en.lproj')
-    build_xibless()
     loc.generate_cocoa_strings_from_code('cocoa', 'cocoa/en.lproj')
 
 def build_mergepot():
@@ -280,8 +262,6 @@ def main():
         print_and_do('{0} waf configure && {0} waf'.format(sys.executable))
         os.chdir('..')
         cocoa_app().copy_executable('cocoa/build/dupeGuru')
-    elif options.xibless:
-        build_xibless()
     else:
         build_normal(options.dev)
 
