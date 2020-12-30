@@ -1,6 +1,3 @@
 [submodule "dupeguru"]
 	path = dupeguru
 	url = https://github.com/hsoft/dupeguru.git
-[submodule "hscommon"]
-	path = hscommon
-	url = https://github.com/hsoft/hscommon.git

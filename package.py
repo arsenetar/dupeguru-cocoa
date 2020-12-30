@@ -6,6 +6,11 @@
 
 from argparse import ArgumentParser
 
+# Modify the python path so the hscommon files in the dupeguru submodule may be used
+import sys
+import os
+sys.path.append(os.path.join(os.getcwd(), 'dupeguru'))
+
 from hscommon.build import setup_package_argparser, package_cocoa_app_in_dmg
 
 def parse_args():
@@ -14,7 +19,7 @@ def parse_args():
     return parser.parse_args()
 
 def package_cocoa(args):
-    app_path = 'build/dupeGuru.app'
+    app_path = 'build/Release/dupeGuru.app'
     package_cocoa_app_in_dmg(app_path, '.', args)
 
 def main():

@@ -38,6 +38,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 - (IBAction)close:(id)sender
 {
     [[self window] orderOut:self];
-    [NSApp stopModalWithCode:NSOKButton];
+    [NSApp stopModalWithCode:NSModalResponseOK];
 }
 @end
