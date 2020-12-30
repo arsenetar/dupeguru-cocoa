@@ -165,7 +165,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 - (BOOL)previewPanel:(QLPreviewPanel *)panel handleEvent:(NSEvent *)event
 {
     // redirect all key down events to the table view
-    if ([event type] == NSKeyDown) {
+    if ([event type] == NSEventTypeKeyDown) {
         [[self view] keyDown:event];
         return YES;
     }

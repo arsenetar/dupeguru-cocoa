@@ -197,7 +197,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [op setAllowsMultipleSelection:NO];
     [op setAllowedFileTypes:[NSArray arrayWithObject:@"dupeguru"]];
     [op setTitle:NSLocalizedString(@"Select a results file to load", @"")];
-    if ([op runModal] == NSOKButton) {
+    if ([op runModal] == NSModalResponseOK) {
         NSString *filename = [[[op URLs] objectAtIndex:0] path];
         [model loadResultsFrom:filename];
         [[self recentResults] addFile:filename];
@@ -354,7 +354,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [op setCanCreateDirectories:YES];
     [op setAllowsMultipleSelection:NO];
     [op setTitle:prompt];
-    if ([op runModal] == NSOKButton) {
+    if ([op runModal] == NSModalResponseOK) {
         return [[[op URLs] objectAtIndex:0] path];
     }
     else {
@@ -368,7 +368,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [sp setCanCreateDirectories:YES];
     [sp setAllowedFileTypes:[NSArray arrayWithObject:extension]];
     [sp setTitle:prompt];
-    if ([sp runModal] == NSOKButton) {
+    if ([sp runModal] == NSModalResponseOK) {
         return [[sp URL] path];
     }
     else {

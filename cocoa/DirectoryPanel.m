@@ -113,7 +113,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [op setAllowsMultipleSelection:YES];
     [op setTitle:NSLocalizedString(@"Select a folder to add to the scanning list", @"")];
     [op setDelegate:self];
-    if ([op runModal] == NSOKButton) {
+    if ([op runModal] == NSModalResponseOK) {
         for (NSURL *directoryURL in [op URLs]) {
             [self addDirectory:[directoryURL path]];
         }

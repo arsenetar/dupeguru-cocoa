@@ -59,7 +59,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
         BOOL marked = n2b([pair objectAtIndex:1]);
         NSMenuItem *mi = [[app columnsMenu] addItemWithTitle:display action:@selector(toggleColumn:) keyEquivalent:@""];
         [mi setTarget:self];
-        [mi setState:marked ? NSOnState : NSOffState];
+        [mi setState:marked ? NSControlStateValueOn : NSControlStateValueOff];
         [mi setTag:i];
     }
     [[app columnsMenu] addItem:[NSMenuItem separatorItem]];
@@ -118,10 +118,10 @@ http://www.gnu.org/licenses/gpl-3.0.html
         };
         [[aTable columns] initializeColumns:defs];
         NSTableColumn *c = [[aTable view] tableColumnWithIdentifier:@"marked"];
-        [[c dataCell] setButtonType:NSSwitchButton];
-        [[c dataCell] setControlSize:NSSmallControlSize];
+        [[c dataCell] setButtonType:NSButtonTypeSwitch];
+        [[c dataCell] setControlSize:NSControlSizeSmall];
         c = [[aTable view] tableColumnWithIdentifier:@"size"];
-        [[c dataCell] setAlignment:NSRightTextAlignment];
+        [[c dataCell] setAlignment:NSTextAlignmentRight];
     }
     else if (appMode == AppModeMusic) {
         HSColumnDef defs[] = {
@@ -148,14 +148,14 @@ http://www.gnu.org/licenses/gpl-3.0.html
         };
         [[aTable columns] initializeColumns:defs];
         NSTableColumn *c = [[aTable view] tableColumnWithIdentifier:@"marked"];
-        [[c dataCell] setButtonType:NSSwitchButton];
-        [[c dataCell] setControlSize:NSSmallControlSize];
+        [[c dataCell] setButtonType:NSButtonTypeSwitch];
+        [[c dataCell] setControlSize:NSControlSizeSmall];
         c = [[aTable view] tableColumnWithIdentifier:@"size"];
-        [[c dataCell] setAlignment:NSRightTextAlignment];
+        [[c dataCell] setAlignment:NSTextAlignmentRight];
         c = [[aTable view] tableColumnWithIdentifier:@"duration"];
-        [[c dataCell] setAlignment:NSRightTextAlignment];
+        [[c dataCell] setAlignment:NSTextAlignmentRight];
         c = [[aTable view] tableColumnWithIdentifier:@"bitrate"];
-        [[c dataCell] setAlignment:NSRightTextAlignment];
+        [[c dataCell] setAlignment:NSTextAlignmentRight];
     }
     else {
         HSColumnDef defs[] = {
@@ -172,10 +172,10 @@ http://www.gnu.org/licenses/gpl-3.0.html
         };
         [[aTable columns] initializeColumns:defs];
         NSTableColumn *c = [[aTable view] tableColumnWithIdentifier:@"marked"];
-        [[c dataCell] setButtonType:NSSwitchButton];
-        [[c dataCell] setControlSize:NSSmallControlSize];
+        [[c dataCell] setButtonType:NSButtonTypeSwitch];
+        [[c dataCell] setControlSize:NSControlSizeSmall];
         c = [[aTable view] tableColumnWithIdentifier:@"size"];
-        [[c dataCell] setAlignment:NSRightTextAlignment];
+        [[c dataCell] setAlignment:NSTextAlignmentRight];
     }
     [[aTable columns] restoreColumns];
 }
@@ -305,7 +305,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 {
     PrioritizeDialog *dlg = [[PrioritizeDialog alloc] initWithApp:model];
     NSInteger result = [NSApp runModalForWindow:[dlg window]];
-    if (result == NSRunStoppedResponse) {
+    if (result == NSModalResponseStop ) {
         [[dlg model] performReprioritization];
     }
     [dlg release];
@@ -329,7 +329,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
     [sp setCanCreateDirectories:YES];
     [sp setAllowedFileTypes:[NSArray arrayWithObject:@"dupeguru"]];
     [sp setTitle:NSLocalizedString(@"Select a file to save your results to", @"")];
-    if ([sp runModal] == NSOKButton) {
+    if ([sp runModal] == NSModalResponseOK) {
         [model saveResultsAs:[[sp URL] path]];
         [[app recentResults] addFile:[[sp URL] path]];
     }
@@ -344,7 +344,7 @@ http://www.gnu.org/licenses/gpl-3.0.html
 {
     NSMenuItem *mi = sender;
     BOOL checked = [[[table columns] model] toggleMenuItem:[mi tag]];
-    [mi setState:checked ? NSOnState : NSOffState];
+    [mi setState:checked ? NSControlStateValueOn : NSControlStateValueOff];
 }
 
 - (IBAction)toggleDetailsPanel:(id)sender

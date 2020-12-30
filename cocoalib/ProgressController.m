@@ -49,7 +49,7 @@ static ProgressController *_mainPC = nil;
         [_worker cancelJob];
     [[NSNotificationCenter defaultCenter] postNotificationName:JobCancelledNotification object:self];
     _running = NO;
-    [NSApp endSheet:[self window] returnCode:NSRunAbortedResponse];
+    [NSApp endSheet:[self window] returnCode:NSModalResponseAbort];
     /* There's this really strange thing where when the app is inactive at the point we want to hide
        the progress dialog, it becomes impossible to close it. I guess it's due to some strange
        thread-related crap. Anyway, *DO NOT HIDE THE SHEET WHILE THE APP IS INACTIVE*. Do it later,

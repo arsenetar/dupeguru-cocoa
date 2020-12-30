@@ -33,19 +33,19 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 - (IBAction)updateOptions:(id)sender
 {
-    [model setLinkDeleted:[linkButton state] == NSOnState];
+    [model setLinkDeleted:[linkButton state] == NSControlStateValueOn];
     [model setUseHardlinks:[linkTypeRadio selectedColumn] == 1];
-    [model setDirect:[directButton state] == NSOnState];
+    [model setDirect:[directButton state] == NSControlStateValueOn];
 }
 
 - (IBAction)proceed:(id)sender
 {
-    [NSApp stopModalWithCode:NSOKButton];
+    [NSApp stopModalWithCode:NSModalResponseOK];
 }
 
 - (IBAction)cancel:(id)sender
 {
-    [NSApp stopModalWithCode:NSCancelButton];
+    [NSApp stopModalWithCode:NSModalResponseCancel];
 }
 
 /* model --> view */
@@ -56,12 +56,12 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 - (BOOL)show
 {
-    [linkButton setState:NSOffState];
-    [directButton setState:NSOffState];
+    [linkButton setState:NSControlStateValueOff];
+    [directButton setState:NSControlStateValueOff];
     [linkTypeRadio selectCellAtRow:0 column:0];
     NSInteger r = [NSApp runModalForWindow:[self window]];
     [[self window] close];
-    return r == NSOKButton;
+    return r == NSModalResponseOK;
 }
 
 - (void)setHardlinkOptionEnabled:(BOOL)enabled

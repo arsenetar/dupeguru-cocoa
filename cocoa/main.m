@@ -23,7 +23,6 @@ int main(int argc, char *argv[])
     Py_SetPath(wPythonPath);
     Py_SetPythonHome(wPythonPath);
     Py_Initialize();
-    PyEval_InitThreads();
     PyGILState_STATE gilState = PyGILState_Ensure();
     FILE* fp = fopen([mainpy UTF8String], "r");
     PyRun_SimpleFile(fp, [mainpy UTF8String]);

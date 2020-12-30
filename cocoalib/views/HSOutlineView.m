@@ -164,8 +164,8 @@ http://www.gnu.org/licenses/gpl-3.0.html
     NSString *data = [[self delegate] dataForCopyToPasteboard];
     if (data != nil) {
         NSPasteboard *p = [NSPasteboard generalPasteboard];
-        [p declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:nil];
-        [p setString:data forType:NSStringPboardType];
+        [p declareTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil] owner:nil];
+        [p setString:data forType:NSPasteboardTypeString];
     }
 }
 

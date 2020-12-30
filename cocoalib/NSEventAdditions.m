@@ -24,14 +24,14 @@ http://www.gnu.org/licenses/gpl-3.0.html
 {
     // get flags and strip the lower 16 (device dependant) bits
     // See modifierFlags's doc for details
-    return [self modifierFlags] & NSDeviceIndependentModifierFlagsMask;
+    return [self modifierFlags] & NSEventModifierFlagDeviceIndependentFlagsMask;
 }
 
 - (NSUInteger)modifierKeysFlags
 {
     // This is modifierFlags with only Command, Opt, Ctrl and Shift, without the rest of the flags
     // to pollute.
-    return [self flags] & (NSShiftKeyMask | NSControlKeyMask | NSAlternateKeyMask | NSCommandKeyMask);
+    return [self flags] & (NSEventModifierFlagShift | NSEventModifierFlagControl | NSEventModifierFlagOption | NSEventModifierFlagCommand);
 }
 
 - (BOOL)isDeleteOrBackspace
