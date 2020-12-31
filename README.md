@@ -18,8 +18,8 @@ download is still PGP signed) If you're a Mac developer and are interested in ta
 
 ### Prerequisites
 
-* Python 3.4+ compiled in "framework mode".
-* MacOS 10.10+ with XCode command line tools.
+* Python 3.6+ compiled in "framework mode".
+* MacOS 10.12+ with XCode command line tools.
 
 ### make
 

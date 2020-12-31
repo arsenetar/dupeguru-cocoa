@@ -1,5 +1,5 @@
 PYTHON ?= python3
-REQ_MINOR_VERSION = 4
+REQ_MINOR_VERSION = 6
 
 all : | env build
 	@echo "Build complete! You can run dupeGuru with 'make run'"
