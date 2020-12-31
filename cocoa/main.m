@@ -24,17 +24,9 @@ int main(int argc, char *argv[])
     Py_SetPythonHome(wPythonPath);
     Py_Initialize();
     PyGILState_STATE gilState = PyGILState_Ensure();
-    /* This main gets called when multiprocessing spawns new threads.  To
-       prevent this from opening more windows and not working correctly we
-       are just checking main here and not running the file.  Should be able
-       to block on the python side of things but checking
-       __name__ == "__main__" did not seem to work in the one location I tried.
-     */
-    if ([NSThread isMainThread]) {
-        FILE* fp = fopen([mainpy UTF8String], "r");
-        PyRun_SimpleFile(fp, [mainpy UTF8String]);
-        fclose(fp);
-    }
+    FILE* fp = fopen([mainpy UTF8String], "r");
+    PyRun_SimpleFile(fp, [mainpy UTF8String]);
+    fclose(fp);
     PyGILState_Release(gilState);
     if (gilState == PyGILState_LOCKED) {
         PyThreadState_Swap(NULL);
