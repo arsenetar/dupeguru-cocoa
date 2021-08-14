@@ -25,14 +25,17 @@ int main(int argc, char *argv[])
     Py_Initialize();
     PyGILState_STATE gilState = PyGILState_Ensure();
     FILE* fp = fopen([mainpy UTF8String], "r");
-    PyRun_SimpleFile(fp, [mainpy UTF8String]);
+    int result = PyRun_SimpleFile(fp, [mainpy UTF8String]);
+    if (result != 0) {
+        return result;
+    }
     fclose(fp);
     PyGILState_Release(gilState);
     if (gilState == PyGILState_LOCKED) {
         PyThreadState_Swap(NULL);
         PyEval_ReleaseLock();
     }
-    int result = NSApplicationMain(argc,  (const char **) argv);
+    result = NSApplicationMain(argc,  (const char **) argv);
     Py_Finalize();
     return result;
 }

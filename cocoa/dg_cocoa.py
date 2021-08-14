@@ -6,6 +6,10 @@
 
 import codecs, io, locale
 
+# Force multiprocessing to use fork instead of spawn (as spawn currently causes issues)
+import multiprocessing
+multiprocessing.set_start_method('fork')
+
 from hscommon.trans import install_gettext_trans_under_cocoa
 install_gettext_trans_under_cocoa()
 
