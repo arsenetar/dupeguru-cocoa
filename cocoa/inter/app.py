@@ -31,7 +31,7 @@ class DupeGuru(DupeGuruBase):
 
     def _get_fileclasses(self):
         result = DupeGuruBase._get_fileclasses(self)
-        if self.app_mode == AppMode.Standard:
+        if self.app_mode == AppMode.STANDARD:
             result = [Bundle] + result
         return result
 

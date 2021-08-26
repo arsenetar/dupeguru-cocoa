@@ -90,7 +90,7 @@ def build_cocoa(dev):
         os.mkdir(pydep_folder)
     shutil.copy(op.join(cocoa_project_path, 'dg_cocoa.py'), 'build')
     tocopy = [
-        'dupeguru/core', 'dupeguru/hscommon', 'cocoa/inter', 'cocoalib/cocoa', 'objp', 'send2trash', 'hsaudiotag',
+        'dupeguru/core', 'dupeguru/hscommon', 'cocoa/inter', 'cocoalib/cocoa', 'objp', 'send2trash', 'mutagen'
     ]
     copy_packages(tocopy, pydep_folder, create_links=dev)
     sys.path.insert(0, 'build')

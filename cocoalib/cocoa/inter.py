@@ -181,7 +181,7 @@ class PyTable(PyGUIObject):
     
     #--- Cocoa --> Python
     def columns(self) -> pyref:
-        return self.model.columns
+        return self.model._columns
     
     def add(self):
         self.model.add()
